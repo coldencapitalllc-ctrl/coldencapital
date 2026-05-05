@@ -139,7 +139,7 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(4rem, 10vw, 9rem);
       font-weight: 300; line-height: 0.92; letter-spacing: -0.01em;
-      color: var(--white); margin-bottom: 2.5rem;
+      color: var(--text); margin-bottom: 2.5rem;
       opacity: 0; animation: fadeUp 0.9s 0.4s forwards;
     }
 
@@ -168,7 +168,7 @@
       opacity: 0; transition: opacity 0.3s;
     }
 
-    .hero-cta:hover { border-color: var(--emerald-light); color: var(--white); }
+    .hero-cta:hover { border-color: var(--emerald-light); color: var(--text); }
     .hero-cta:hover::before { opacity: 1; }
     .hero-cta span, .hero-cta svg { position: relative; z-index: 1; }
 
@@ -182,7 +182,7 @@
       display: block;
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.8rem; font-weight: 400; line-height: 1;
-      background: linear-gradient(110deg, var(--copper-light) 0%, var(--platinum-light) 50%, var(--silver-mid) 100%);
+      background: linear-gradient(110deg, #B06838 0%, #C8962A 50%, #1A6E4E 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -209,7 +209,7 @@
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.5rem, 5vw, 4.5rem);
-      font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 1.5rem;
+      font-weight: 300; line-height: 1.1; color: var(--text); margin-bottom: 1.5rem;
     }
 
     .section-title em { font-style: italic; font-weight: 600; }
@@ -221,7 +221,7 @@
     }
 
     #about .section-title em {
-      background: linear-gradient(90deg, var(--emerald-light), var(--diamond));
+      background: linear-gradient(90deg, #1A6E4E, #1F9268, #3A7A9A);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -250,7 +250,7 @@
     .value-card h4 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.2rem; font-weight: 600;
-      color: var(--platinum-light); margin-bottom: 0.5rem;
+      color: #2A2420; margin-bottom: 0.5rem;
     }
 
     .value-card p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; }
@@ -258,7 +258,7 @@
     #strategy { background: var(--bg); }
 
     #strategy .section-title em {
-      background: linear-gradient(90deg, var(--copper-light), var(--platinum-light), var(--silver-mid));
+      background: linear-gradient(90deg, #B06838, #C8962A, #7A6A50);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -266,8 +266,8 @@
 
     .strategy-flow::before {
       content: ''; position: absolute; top: 2.5rem; left: 12.5%; right: 12.5%; height: 1px;
-      background: linear-gradient(to right, var(--copper), var(--silver-mid), var(--emerald-light), var(--diamond));
-      opacity: 0.3;
+      background: linear-gradient(to right, #B06838, #7A6A50, #1F9268, #3A7A9A);
+      opacity: 0.5;
     }
 
     .flow-step { padding: 0 2rem 2rem; text-align: center; position: relative; }
@@ -281,23 +281,23 @@
       transition: border-color 0.3s, box-shadow 0.3s;
     }
 
-    .flow-step:nth-child(1) .flow-num { color: var(--copper-light); }
-    .flow-step:nth-child(2) .flow-num { color: var(--silver-mid); }
-    .flow-step:nth-child(3) .flow-num { color: var(--emerald-light); }
-    .flow-step:nth-child(4) .flow-num { color: var(--diamond); }
+    .flow-step:nth-child(1) .flow-num { color: #B06838; }
+    .flow-step:nth-child(2) .flow-num { color: #5A6A7A; }
+    .flow-step:nth-child(3) .flow-num { color: #1A6E4E; }
+    .flow-step:nth-child(4) .flow-num { color: #3A7A9A; }
 
     .flow-step:nth-child(1):hover .flow-num { border-color: var(--copper); box-shadow: 0 0 20px rgba(192,120,72,0.18); }
     .flow-step:nth-child(2):hover .flow-num { border-color: var(--silver); box-shadow: 0 0 20px rgba(154,175,194,0.15); }
     .flow-step:nth-child(3):hover .flow-num { border-color: var(--emerald); box-shadow: 0 0 20px rgba(28,122,88,0.18); }
     .flow-step:nth-child(4):hover .flow-num { border-color: var(--diamond); box-shadow: 0 0 20px rgba(194,220,240,0.12); }
 
-    .flow-step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--white); margin-bottom: 0.75rem; }
+    .flow-step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
     .flow-step p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.7; }
 
     #ventures { background: var(--bg2); border-top: 1px solid var(--border-em); border-bottom: 1px solid var(--border-em); }
 
     #ventures .section-title em {
-      background: linear-gradient(90deg, var(--emerald-light), var(--platinum-light));
+      background: linear-gradient(90deg, #1A6E4E, #5A6A7A);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -324,9 +324,9 @@
     .venture-icon { font-size: 2rem; margin-bottom: 1.25rem; }
 
     .venture-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; }
-    .venture-card:nth-child(1) h4 { color: var(--copper-light); }
-    .venture-card:nth-child(2) h4 { color: var(--platinum-light); }
-    .venture-card:nth-child(3) h4 { color: var(--emerald-light); }
+    .venture-card:nth-child(1) h4 { color: #B06838; }
+    .venture-card:nth-child(2) h4 { color: #4A5A6A; }
+    .venture-card:nth-child(3) h4 { color: #1A6E4E; }
 
     .venture-card p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.75; }
 
@@ -345,7 +345,7 @@
       color: var(--text-dim); line-height: 1.9;
     }
 
-    .disclaimer-box strong { color: var(--silver-mid); font-weight: 400; }
+    .disclaimer-box strong { color: #4A5A6A; font-weight: 400; }
 
     #contact { background: var(--bg); text-align: center; padding: 8rem 4rem; }
     #contact .section-label { justify-content: center; }
@@ -353,7 +353,7 @@
     #contact .section-title { max-width: 600px; margin: 0 auto 1.5rem; }
 
     #contact .section-title em {
-      background: linear-gradient(90deg, var(--copper-light), var(--diamond));
+      background: linear-gradient(90deg, #B06838, #3A7A9A);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
