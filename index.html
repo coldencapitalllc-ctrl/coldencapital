@@ -4,42 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Colden Capital — Private Family Enterprise</title>
-  <meta name="description" content="Colden Capital is a private family enterprise based in Fort Mill, South Carolina. We use options and long-dated equity contracts to fund real-world business acquisitions and income-producing assets." />
+  <meta name="description" content="Colden Capital is a private family enterprise based in South Carolina. We convert financial education and disciplined market execution into real-world income-producing assets." />
   <meta property="og:title" content="Colden Capital" />
   <meta property="og:description" content="A private family enterprise that leverages market vehicles to create real-world business and investment opportunities." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coldencapital.com" />
-  <meta property="og:image" content="https://coldencapital.com/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@COLDENCAPITAL" />
-  <meta name="twitter:title" content="Colden Capital" />
-  <meta name="twitter:description" content="A private family enterprise that leverages market vehicles to create real-world business and investment opportunities." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!--
+  ═══════════════════════════════════════════════════════════════
+  FABLE 5 INTEGRATION SCAFFOLD
+  When upgrading to claude-fable-5, initialize the client here:
+
+  import Anthropic from '@anthropic-ai/sdk';
+  const client = new Anthropic();
+
+  Planned AI features (plug in when ready):
+    - AI Capital Flow Advisor: real-time Q&A on the model
+    - Dynamic asset recommendations based on market conditions
+    - Personalized education pathway generator
+    - Live portfolio narration via streaming text
+
+  Model ID: 'claude-fable-5'
+  ═══════════════════════════════════════════════════════════════
+  -->
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --copper:        #C07848;
-      --copper-light:  #D4915A;
-      --copper-dim:    rgba(192,120,72,0.12);
+      --copper:        #B5662A;
+      --copper-light:  #C8783A;
+      --copper-dim:    rgba(181,102,42,0.10);
       --emerald:       #1A6E4E;
-      --emerald-light: #22A070;
-      --emerald-dim:   rgba(26,110,78,0.15);
-      --diamond:       #5A8AAA;
-      --diamond-dim:   rgba(90,138,170,0.12);
-      --gold:          #C8962A;
-      --bg:            #0D0F0E;
-      --bg2:           #111413;
-      --bg3:           #161918;
-      --bg4:           #1C1F1E;
-      --text:          #EDE8E1;
-      --text-dim:      #8A8078;
-      --text-muted:    #4A4540;
-      --border:        rgba(200,150,42,0.10);
-      --border-em:     rgba(26,110,78,0.20);
-      --border-cu:     rgba(192,120,72,0.18);
+      --emerald-light: #1F9268;
+      --emerald-dim:   rgba(26,110,78,0.08);
+      --diamond:       #4A7A9A;
+      --diamond-dim:   rgba(74,122,154,0.08);
+      --gold:          #B8861E;
+      --steel:         #8AA8C8;
+
+      --bg:         #FDFBF8;
+      --bg2:        #F8F5F0;
+      --bg3:        #F2EDE6;
+      --bg4:        #EDE6DC;
+      --text:       #1A1714;
+      --text-dim:   #6B6058;
+      --text-muted: #A89E94;
+      --border:     rgba(100,80,55,0.10);
+      --border-em:  rgba(26,110,78,0.14);
+      --border-cu:  rgba(181,102,42,0.15);
     }
 
     html { scroll-behavior: smooth; }
@@ -57,20 +75,20 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1.5rem 4rem;
-      background: rgba(13,15,14,0.88);
-      backdrop-filter: blur(20px);
+      padding: 1.5rem 5rem;
+      background: rgba(253,251,248,0.92);
+      backdrop-filter: blur(20px) saturate(1.4);
       border-bottom: 1px solid var(--border);
-      transition: padding 0.3s;
+      transition: padding 0.35s;
     }
 
-    nav.scrolled { padding: 1rem 4rem; }
+    nav.scrolled { padding: 1rem 5rem; box-shadow: 0 1px 24px rgba(100,80,55,0.06); }
 
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
-      background: linear-gradient(110deg, #C07848 0%, #C8962A 35%, #22A070 65%, #5A8AAA 100%);
+      font-size: 1.35rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+      background: linear-gradient(108deg, #B5662A 0%, #B8861E 40%, #1F9268 72%, #4A7A9A 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -78,133 +96,132 @@
 
     .nav-links a {
       font-family: 'DM Mono', monospace;
-      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--text-dim); text-decoration: none; transition: color 0.25s;
+      font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-muted); text-decoration: none; transition: color 0.25s;
     }
 
-    .nav-links a:hover { color: var(--emerald-light); }
+    .nav-links a:hover { color: var(--emerald); }
 
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 10rem 4rem 6rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 9rem 5rem 6rem;
       position: relative; overflow: hidden;
+      gap: 4rem;
     }
 
-    #hero-canvas {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      pointer-events: none; z-index: 0; opacity: 0.65;
+    /* Subtle grain texture */
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.022'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0;
     }
 
-    .hero-content { position: relative; z-index: 1; }
+    /* Soft warm gradient blob top-right */
+    #hero::after {
+      content: '';
+      position: absolute; top: -15%; right: -10%;
+      width: 55vw; height: 55vw; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(181,102,42,0.06) 0%, rgba(31,146,104,0.04) 45%, transparent 75%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .hero-left { position: relative; z-index: 1; }
+    .hero-right { position: relative; z-index: 1; }
 
     .hero-tag {
       font-family: 'DM Mono', monospace;
-      font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase;
+      font-size: 0.65rem; letter-spacing: 0.26em; text-transform: uppercase;
       color: var(--emerald-light); margin-bottom: 2rem;
-      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
-      display: flex; align-items: center; gap: 1rem;
+      display: flex; align-items: center; gap: 0.9rem;
+      opacity: 0; animation: fadeUp 0.7s 0.15s forwards;
     }
 
-    .hero-tag::before {
-      content: ''; display: block; width: 32px; height: 1px;
-      background: var(--emerald-light);
-    }
+    .hero-tag::before { content: ''; display: block; width: 28px; height: 1px; background: var(--emerald-light); }
 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4.5rem, 11vw, 10rem);
-      font-weight: 300; line-height: 0.9; letter-spacing: -0.02em;
+      font-size: clamp(4.5rem, 9vw, 8.5rem);
+      font-weight: 300; line-height: 0.92; letter-spacing: -0.02em;
       color: var(--text); margin-bottom: 2.5rem;
-      opacity: 0; animation: fadeUp 0.9s 0.4s forwards;
+      opacity: 0; animation: fadeUp 0.8s 0.3s forwards;
     }
 
     .hero-title em {
-      font-style: italic; font-weight: 600; display: block;
-      background: linear-gradient(112deg, #C07848 0%, #C8962A 30%, #22A070 60%, #5A8AAA 100%);
+      display: block; font-style: italic; font-weight: 600;
+      background: linear-gradient(108deg, #B5662A 0%, #B8861E 35%, #1F9268 65%, #4A7A9A 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .hero-sub {
-      max-width: 540px; font-size: 1.05rem;
-      color: var(--text-dim); line-height: 1.9; margin-bottom: 3rem;
-      opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
+      font-size: 1.08rem; color: var(--text-dim); line-height: 1.92;
+      max-width: 480px; margin-bottom: 3rem;
+      opacity: 0; animation: fadeUp 0.8s 0.45s forwards;
     }
 
     .hero-btns {
-      display: flex; gap: 1.25rem; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp 0.9s 0.8s forwards;
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
     }
 
     .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.75rem;
+      display: inline-flex; align-items: center; gap: 0.7rem;
       font-family: 'DM Mono', monospace;
-      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--bg); text-decoration: none; padding: 1rem 2rem;
-      background: linear-gradient(110deg, var(--copper) 0%, var(--gold) 50%, var(--emerald-light) 100%);
-      background-size: 200% 100%; background-position: 0% 0%;
-      transition: background-position 0.5s, transform 0.2s;
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: #fff; text-decoration: none; padding: 1rem 2rem;
+      background: linear-gradient(108deg, var(--copper) 0%, var(--gold) 50%, var(--emerald) 100%);
+      background-size: 200%; background-position: 0%;
+      transition: background-position 0.55s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(181,102,42,0.18);
     }
 
-    .btn-primary:hover { background-position: 100% 0%; transform: translateY(-2px); }
+    .btn-primary:hover { background-position: 100%; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(181,102,42,0.24); }
 
     .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.75rem;
+      display: inline-flex; align-items: center; gap: 0.7rem;
       font-family: 'DM Mono', monospace;
-      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
       color: var(--text-dim); text-decoration: none; padding: 1rem 2rem;
       border: 1px solid var(--border-cu);
-      transition: border-color 0.3s, color 0.3s;
+      transition: border-color 0.3s, color 0.3s, box-shadow 0.3s;
     }
 
-    .btn-ghost:hover { border-color: var(--copper); color: var(--copper-light); }
+    .btn-ghost:hover { border-color: var(--copper); color: var(--copper); box-shadow: 0 4px 16px var(--copper-dim); }
 
-    .hero-stats {
-      display: flex; gap: 3.5rem; margin-top: 5rem; padding-top: 3rem;
-      border-top: 1px solid var(--border);
-      opacity: 0; animation: fadeUp 0.9s 1s forwards;
-    }
-
-    .hero-stat strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem; font-weight: 400; line-height: 1;
-      background: linear-gradient(110deg, #C07848 0%, #C8962A 50%, #22A070 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-
-    .hero-stat span {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--text-muted);
+    /* Hero right — flow mini-preview orb */
+    .hero-orb-wrap {
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; animation: fadeIn 1.2s 0.8s forwards;
     }
 
     /* ── SECTION BASE ── */
-    section { padding: 8rem 4rem; position: relative; }
+    section { padding: 8rem 5rem; position: relative; }
 
     .section-label {
       font-family: 'DM Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase;
+      font-size: 0.62rem; letter-spacing: 0.26em; text-transform: uppercase;
       color: var(--emerald-light); margin-bottom: 1.5rem;
-      display: flex; align-items: center; gap: 1rem;
+      display: flex; align-items: center; gap: 0.9rem;
     }
 
     .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--emerald-light); }
 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
       font-weight: 300; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem;
     }
 
     .section-title em { font-style: italic; font-weight: 600; }
 
     /* ── ABOUT ── */
-    #about { background: var(--bg2); border-top: 1px solid var(--border-em); }
+    #about { background: var(--bg2); border-top: 1px solid var(--border); }
 
     #about .section-title em {
-      background: linear-gradient(90deg, #22A070, #5A8AAA);
+      background: linear-gradient(90deg, #1F9268, #4A7A9A);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -213,14 +230,16 @@
     .about-text p { color: var(--text-dim); margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.95; }
     .about-text p strong { color: var(--text); font-weight: 500; }
 
-    .about-pillars { display: flex; flex-direction: column; gap: 1px; }
+    .about-pillars { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
 
     .pillar {
-      padding: 2rem; border: 1px solid var(--border);
-      background: var(--bg3); position: relative; overflow: hidden;
-      transition: border-color 0.3s;
+      padding: 2rem 2.25rem; background: var(--bg);
+      position: relative; overflow: hidden;
+      transition: background 0.3s;
       cursor: default;
     }
+
+    .pillar:hover { background: var(--bg2); }
 
     .pillar-bar {
       position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
@@ -231,76 +250,69 @@
     .pillar:nth-child(2) .pillar-bar { background: var(--emerald-light); }
     .pillar:nth-child(3) .pillar-bar { background: var(--diamond); }
 
-    .pillar:hover { border-color: var(--border-em); }
     .pillar:hover .pillar-bar { transform: scaleY(1); }
 
     .pillar h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;
+      font-size: 1.2rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;
     }
 
-    .pillar p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.75; }
+    .pillar p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.78; }
 
     /* ── CAPITAL FLOW ── */
     #flow {
-      background: var(--bg); padding: 8rem 4rem;
-      border-top: 1px solid var(--border-cu);
-      border-bottom: 1px solid var(--border-cu);
+      background: var(--bg); padding: 8rem 5rem;
+      border-top: 1px solid var(--border);
     }
 
     #flow .section-title em {
-      background: linear-gradient(90deg, #C07848, #C8962A);
+      background: linear-gradient(90deg, #B5662A, #B8861E);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    .flow-diagram {
-      margin-top: 4rem;
-      position: relative;
+    .flow-intro {
+      color: var(--text-dim); max-width: 620px; font-size: 1.05rem; line-height: 1.92;
+      margin-bottom: 0.5rem;
     }
 
     .flow-svg-wrap {
-      width: 100%; max-width: 1100px; margin: 0 auto;
+      width: 100%; max-width: 1120px; margin: 3.5rem auto 0;
       overflow-x: auto;
     }
 
-    /* ── FLOW LEGEND ── */
     .flow-legend {
-      display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;
-      margin-top: 3rem;
+      display: flex; flex-wrap: wrap; gap: 1.75rem; justify-content: center;
+      margin-top: 2.5rem;
     }
 
     .flow-legend-item {
-      display: flex; align-items: center; gap: 0.6rem;
-      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em;
+      display: flex; align-items: center; gap: 0.55rem;
+      font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em;
       color: var(--text-muted);
     }
 
-    .flow-legend-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-    }
+    .flow-legend-dot { width: 7px; height: 7px; border-radius: 50%; }
 
-    /* ── STRATEGY STEPS ── */
-    #strategy { background: var(--bg2); }
+    /* ── STRATEGY FLYWHEEL ── */
+    #strategy { background: var(--bg2); border-top: 1px solid var(--border); }
 
     #strategy .section-title em {
-      background: linear-gradient(90deg, #C07848, #C8962A, #22A070);
+      background: linear-gradient(90deg, #B5662A, #B8861E, #1F9268);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .steps-grid {
-      display: grid; grid-template-columns: repeat(4,1fr);
+      display: grid; grid-template-columns: repeat(5,1fr);
       gap: 0; margin-top: 5rem; position: relative;
     }
 
     .steps-connector {
-      position: absolute; top: 44px; left: 12.5%; right: 12.5%; height: 1px;
-      background: linear-gradient(to right, var(--copper), var(--gold), var(--emerald-light), var(--diamond));
-      opacity: 0.35;
+      position: absolute; top: 44px; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(to right, var(--copper), var(--gold), var(--steel), var(--emerald-light), var(--diamond));
+      opacity: 0.25;
     }
 
-    .step {
-      padding: 0 2.5rem 3rem; text-align: center; position: relative;
-    }
+    .step { padding: 0 2rem 3rem; text-align: center; position: relative; }
 
     .step-num {
       width: 88px; height: 88px; border-radius: 50%;
@@ -308,51 +320,41 @@
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 2rem;
       font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300;
-      background: var(--bg2); position: relative; z-index: 1;
-      transition: border-color 0.35s, box-shadow 0.35s;
+      background: var(--bg); position: relative; z-index: 1;
+      transition: border-color 0.35s, box-shadow 0.35s, background 0.35s;
     }
 
     .step:nth-child(1) .step-num { color: var(--copper); }
     .step:nth-child(2) .step-num { color: var(--gold); }
-    .step:nth-child(3) .step-num { color: var(--emerald-light); }
-    .step:nth-child(4) .step-num { color: var(--diamond); }
+    .step:nth-child(3) .step-num { color: var(--steel); }
+    .step:nth-child(4) .step-num { color: var(--emerald-light); }
+    .step:nth-child(5) .step-num { color: var(--diamond); }
 
-    .step:nth-child(1):hover .step-num { border-color: var(--copper); box-shadow: 0 0 28px rgba(192,120,72,0.22); }
-    .step:nth-child(2):hover .step-num { border-color: var(--gold); box-shadow: 0 0 28px rgba(200,150,42,0.20); }
-    .step:nth-child(3):hover .step-num { border-color: var(--emerald-light); box-shadow: 0 0 28px rgba(34,160,112,0.22); }
-    .step:nth-child(4):hover .step-num { border-color: var(--diamond); box-shadow: 0 0 28px rgba(90,138,170,0.20); }
+    .step:nth-child(1):hover .step-num { border-color: var(--copper); box-shadow: 0 0 24px rgba(181,102,42,0.14); background: var(--bg2); }
+    .step:nth-child(2):hover .step-num { border-color: var(--gold); box-shadow: 0 0 24px rgba(184,134,30,0.12); background: var(--bg2); }
+    .step:nth-child(3):hover .step-num { border-color: var(--steel); box-shadow: 0 0 24px rgba(138,168,200,0.14); background: var(--bg2); }
+    .step:nth-child(4):hover .step-num { border-color: var(--emerald-light); box-shadow: 0 0 24px rgba(31,146,104,0.14); background: var(--bg2); }
+    .step:nth-child(5):hover .step-num { border-color: var(--diamond); box-shadow: 0 0 24px rgba(74,122,154,0.14); background: var(--bg2); }
 
-    .step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
-    .step p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.8; }
+    .step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
+    .step p { font-size: 0.86rem; color: var(--text-dim); line-height: 1.82; }
 
     /* ── VENTURES ── */
-    #ventures {
-      background: var(--bg);
-      border-top: 1px solid var(--border-em);
-    }
+    #ventures { background: var(--bg3); border-top: 1px solid var(--border); }
 
     #ventures .section-title em {
-      background: linear-gradient(90deg, #22A070, #5A8AAA, #C07848);
+      background: linear-gradient(90deg, #1F9268, #4A7A9A, #B5662A);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .ventures-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 5rem; }
 
     .venture-card {
-      padding: 3rem 2.5rem; background: var(--bg3); border: 1px solid var(--border);
+      padding: 2.75rem 2.5rem; background: var(--bg); border: 1px solid var(--border);
       position: relative; overflow: hidden;
       transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
-      transform-style: preserve-3d;
       cursor: default;
     }
-
-    .venture-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 70%);
-      opacity: 0; transition: opacity 0.3s;
-    }
-
-    .venture-card:hover::before { opacity: 1; }
 
     .venture-card::after {
       content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
@@ -361,49 +363,45 @@
 
     .venture-card:nth-child(1)::after { background: linear-gradient(90deg, var(--copper), var(--gold)); }
     .venture-card:nth-child(2)::after { background: linear-gradient(90deg, var(--emerald), var(--emerald-light)); }
-    .venture-card:nth-child(3)::after { background: linear-gradient(90deg, var(--diamond), #8ABACC); }
+    .venture-card:nth-child(3)::after { background: linear-gradient(90deg, var(--diamond), var(--steel)); }
 
-    .venture-card:hover { transform: translateY(-6px); box-shadow: 0 32px 80px rgba(0,0,0,0.4); border-color: var(--border-em); }
+    .venture-card:hover { transform: translateY(-5px); box-shadow: 0 24px 60px rgba(100,80,55,0.10); border-color: var(--border-em); }
     .venture-card:hover::after { transform: scaleX(1); }
 
     .venture-icon-wrap {
-      width: 60px; height: 60px; margin-bottom: 1.75rem;
+      width: 56px; height: 56px; margin-bottom: 1.75rem;
       border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
-      position: relative;
     }
 
     .venture-card:nth-child(1) .venture-icon-wrap { border-color: var(--border-cu); }
     .venture-card:nth-child(2) .venture-icon-wrap { border-color: var(--border-em); }
-    .venture-card:nth-child(3) .venture-icon-wrap { border-color: var(--diamond-dim); }
+    .venture-card:nth-child(3) .venture-icon-wrap { border-color: rgba(74,122,154,0.18); }
 
-    .venture-icon-wrap svg { width: 28px; height: 28px; }
+    .venture-icon-wrap svg { width: 26px; height: 26px; }
 
     .venture-card h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 600; margin-bottom: 0.75rem;
+      font-size: 1.55rem; font-weight: 600; margin-bottom: 0.75rem;
     }
 
-    .venture-card:nth-child(1) h4 { color: var(--copper-light); }
-    .venture-card:nth-child(2) h4 { color: var(--emerald-light); }
+    .venture-card:nth-child(1) h4 { color: var(--copper); }
+    .venture-card:nth-child(2) h4 { color: var(--emerald); }
     .venture-card:nth-child(3) h4 { color: var(--diamond); }
 
-    .venture-card p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 1.5rem; }
+    .venture-card p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 1.5rem; }
 
     .venture-metric {
-      font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em;
+      font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em;
       color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 1.25rem;
     }
 
     .venture-metric strong { color: var(--text-dim); font-weight: 400; }
 
     /* ── EDUCATION ── */
-    #education {
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-    }
+    #education { background: var(--bg); border-top: 1px solid var(--border); }
 
     #education .section-title em {
-      background: linear-gradient(90deg, #C8962A, #C07848);
+      background: linear-gradient(90deg, #B8861E, #B5662A);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
@@ -414,15 +412,11 @@
 
     .edu-modules { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
 
-    .edu-module {
-      background: var(--bg3); padding: 1.75rem;
-      transition: background 0.3s;
-    }
-
-    .edu-module:hover { background: var(--bg4); }
+    .edu-module { background: var(--bg2); padding: 1.75rem; transition: background 0.3s; }
+    .edu-module:hover { background: var(--bg); }
 
     .edu-module-num {
-      font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em;
+      font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.22em;
       color: var(--gold); margin-bottom: 0.75rem;
     }
 
@@ -431,91 +425,90 @@
       font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;
     }
 
-    .edu-module p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.7; }
+    .edu-module p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.72; }
 
     /* ── DISCLAIMER ── */
     #disclaimer {
       background: var(--bg3); border-top: 1px solid var(--border);
-      padding: 3.5rem 4rem;
+      padding: 3.5rem 5rem;
     }
 
     .disclaimer-box { max-width: 780px; margin: 0 auto; text-align: center; }
 
     .disclaimer-box p {
-      font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.04em;
-      color: var(--text-muted); line-height: 2;
+      font-family: 'DM Mono', monospace; font-size: 0.64rem; letter-spacing: 0.04em;
+      color: var(--text-muted); line-height: 2.1;
     }
 
     .disclaimer-box strong { color: var(--text-dim); font-weight: 400; }
 
     /* ── CONTACT ── */
-    #contact { background: var(--bg); text-align: center; padding: 9rem 4rem; }
+    #contact { background: var(--bg2); text-align: center; padding: 9rem 5rem; }
     #contact .section-label { justify-content: center; }
     #contact .section-label::before { display: none; }
-    #contact .section-title { max-width: 640px; margin: 0 auto 1.5rem; }
+    #contact .section-title { max-width: 620px; margin: 0 auto 1.5rem; }
 
     #contact .section-title em {
-      background: linear-gradient(90deg, #C07848, #C8962A, #22A070);
+      background: linear-gradient(90deg, #B5662A, #B8861E, #1F9268);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    #contact > p { color: var(--text-dim); max-width: 480px; margin: 0 auto 3rem; font-size: 1rem; }
+    #contact > p { color: var(--text-dim); max-width: 480px; margin: 0 auto 3rem; font-size: 1rem; line-height: 1.85; }
 
     .contact-email {
       display: inline-flex; align-items: center; gap: 0.75rem;
-      font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--bg); text-decoration: none; padding: 1.15rem 2.75rem;
-      background: linear-gradient(110deg, var(--emerald) 0%, var(--emerald-light) 50%, var(--diamond) 100%);
+      font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: #fff; text-decoration: none; padding: 1.15rem 2.75rem;
+      background: linear-gradient(108deg, var(--emerald) 0%, var(--emerald-light) 50%, var(--diamond) 100%);
       background-size: 200%; background-position: 0%;
-      transition: background-position 0.5s, transform 0.2s;
+      transition: background-position 0.55s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(26,110,78,0.18);
     }
 
-    .contact-email:hover { background-position: 100%; transform: translateY(-2px); }
+    .contact-email:hover { background-position: 100%; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(26,110,78,0.22); }
 
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 2.5rem 4rem;
+      padding: 2.5rem 5rem;
       display: flex; justify-content: space-between; align-items: center;
-      background: var(--bg2);
+      background: var(--bg3);
     }
 
     .footer-logo {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.1rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-      background: linear-gradient(110deg, #C07848, #C8962A, #22A070);
+      background: linear-gradient(108deg, #B5662A, #B8861E, #1F9268);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    footer p { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--text-muted); }
+    footer p { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; color: var(--text-muted); }
 
     .footer-right { display: flex; align-items: center; gap: 2rem; }
 
     .x-link {
       display: inline-flex; align-items: center; gap: 0.45rem;
-      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em;
+      font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em;
       color: var(--text-muted); text-decoration: none; transition: color 0.25s;
     }
 
-    .x-link:hover { color: var(--emerald-light); }
+    .x-link:hover { color: var(--emerald); }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
+      from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.75s ease, transform 0.75s ease; }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
-
-    /* ── COUNTER ── */
-    .counter-wrap {
-      display: inline-block;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
+
+    .reveal       { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-left  { opacity: 0; transform: translateX(-28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-right { opacity: 0; transform: translateX(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: translate(0); }
 
     /* ── HAMBURGER ── */
     .nav-toggle {
@@ -524,15 +517,15 @@
       background: none; border: none; padding: 0; z-index: 200;
     }
 
-    .nav-toggle span { display: block; width: 100%; height: 1px; background: var(--text-dim); transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle span { display: block; width: 100%; height: 1px; background: var(--text-muted); transition: transform 0.3s, opacity 0.3s; }
     .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
     .mobile-menu {
       display: none; position: fixed; top: 64px; left: 0; right: 0;
-      background: rgba(13,15,14,0.97); backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border-em);
+      background: rgba(253,251,248,0.97); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
       padding: 2rem 1.5rem; flex-direction: column; gap: 0; z-index: 99;
       transform: translateY(-10px); opacity: 0; transition: transform 0.3s, opacity 0.3s;
     }
@@ -540,18 +533,22 @@
     .mobile-menu.open { transform: translateY(0); opacity: 1; }
 
     .mobile-menu a {
-      font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
+      font-family: 'DM Mono', monospace; font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--text-dim); text-decoration: none; padding: 1rem 0;
       border-bottom: 1px solid var(--border); transition: color 0.2s;
     }
 
     .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu a:hover { color: var(--emerald-light); }
+    .mobile-menu a:hover { color: var(--emerald); }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      #hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+    }
+
     @media (max-width: 900px) {
-      nav { padding: 1.25rem 1.5rem; }
-      nav.scrolled { padding: 0.9rem 1.5rem; }
+      nav, nav.scrolled { padding: 1.25rem 1.5rem; }
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
       .mobile-menu { display: flex; }
@@ -561,7 +558,6 @@
       .steps-grid { grid-template-columns: 1fr 1fr; }
       .steps-connector { display: none; }
       .ventures-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 2rem; flex-wrap: wrap; }
       .edu-modules { grid-template-columns: 1fr; }
       footer { flex-direction: column; gap: 1.25rem; text-align: center; }
       .footer-right { flex-direction: column; gap: 0.75rem; }
@@ -596,41 +592,117 @@
 
   <!-- ── HERO ── -->
   <section id="hero">
-    <canvas id="hero-canvas"></canvas>
-    <div class="hero-content">
-      <p class="hero-tag">Family Enterprise · Fort Mill, South Carolina</p>
+    <div class="hero-left">
+      <p class="hero-tag">Family Enterprise · South Carolina</p>
       <h1 class="hero-title">
         Colden<br />
         <em>Capital</em>
       </h1>
       <p class="hero-sub">
-        A private family office that converts financial education and disciplined options trading into real-world assets — dump trucks, commercial real estate, and income-producing businesses.
+        A private family office converting financial education and disciplined market execution into real-world income-producing assets — built to compound across generations.
       </p>
       <div class="hero-btns">
         <a href="#flow" class="btn-primary">
-          <span>See the Capital Flow</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          See the Capital Flow
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#ventures" class="btn-ghost">Our Ventures</a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <strong><span class="counter" data-target="4" data-suffix="">4</span></strong>
-          <span>Income Verticals</span>
-        </div>
-        <div class="hero-stat">
-          <strong>LEAPs</strong>
-          <span>Primary Vehicle</span>
-        </div>
-        <div class="hero-stat">
-          <strong>Family</strong>
-          <span>Owned &amp; Operated</span>
-        </div>
-        <div class="hero-stat">
-          <strong>$3–6K</strong>
-          <span>Per Asset / Month</span>
-        </div>
-      </div>
+    </div>
+
+    <!-- Hero right: animated SVG flow preview -->
+    <div class="hero-right hero-orb-wrap">
+      <svg viewBox="0 0 460 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px;">
+        <defs>
+          <radialGradient id="bg-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(181,102,42,0.06)"/>
+            <stop offset="100%" stop-color="rgba(253,251,248,0)"/>
+          </radialGradient>
+          <filter id="hglow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <marker id="harr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3z" fill="#B5662A" opacity="0.5"/></marker>
+        </defs>
+
+        <!-- Background circle -->
+        <circle cx="230" cy="210" r="180" fill="url(#bg-glow)"/>
+        <circle cx="230" cy="210" r="180" fill="none" stroke="rgba(181,102,42,0.06)" stroke-width="1"/>
+        <circle cx="230" cy="210" r="130" fill="none" stroke="rgba(31,146,104,0.05)" stroke-width="1"/>
+        <circle cx="230" cy="210" r="80" fill="none" stroke="rgba(74,122,154,0.06)" stroke-width="1"/>
+
+        <!-- Nodes positioned in circle -->
+        <!-- 1: Literacy (top) -->
+        <g transform="translate(230,50)">
+          <circle r="36" fill="#FDFBF8" stroke="#B5662A" stroke-width="1" opacity="0.9"/>
+          <text y="-6" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" font-weight="600" fill="#B5662A">Finance</text>
+          <text y="8" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#6B6058">Literacy</text>
+        </g>
+
+        <!-- 2: Market (right) -->
+        <g transform="translate(400,175)">
+          <circle r="36" fill="#FDFBF8" stroke="#B8861E" stroke-width="1" opacity="0.9"/>
+          <text y="-6" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" font-weight="600" fill="#B8861E">Market</text>
+          <text y="8" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#6B6058">Options</text>
+        </g>
+
+        <!-- 3: Bank (bottom-right) -->
+        <g transform="translate(350,340)">
+          <circle r="36" fill="#FDFBF8" stroke="#8AA8C8" stroke-width="1" opacity="0.9"/>
+          <text y="-6" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" font-weight="600" fill="#8AA8C8">Bank</text>
+          <text y="8" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#6B6058">Leverage</text>
+        </g>
+
+        <!-- 4: Assets (bottom-left) -->
+        <g transform="translate(110,340)">
+          <circle r="36" fill="#FDFBF8" stroke="#1F9268" stroke-width="1" opacity="0.9"/>
+          <text y="-6" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" font-weight="600" fill="#1F9268">Hard</text>
+          <text y="8" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#6B6058">Assets</text>
+        </g>
+
+        <!-- 5: Franchise (left) -->
+        <g transform="translate(60,175)">
+          <circle r="36" fill="#FDFBF8" stroke="#4A7A9A" stroke-width="1" opacity="0.9"/>
+          <text y="-6" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" font-weight="600" fill="#4A7A9A">Franchise</text>
+          <text y="8" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="10" fill="#6B6058">Income</text>
+        </g>
+
+        <!-- Center: Cash Flow -->
+        <g transform="translate(230,210)">
+          <circle r="44" fill="#FDFBF8" stroke="rgba(181,102,42,0.25)" stroke-width="1.5"/>
+          <text y="-8" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="13" font-weight="700" fill="#1A1714">Cash</text>
+          <text y="10" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="13" font-style="italic" fill="#B5662A">Flow</text>
+        </g>
+
+        <!-- Connecting arcs (curved arrows between nodes) -->
+        <!-- 1→2 -->
+        <path d="M258,68 Q340,80 378,155" fill="none" stroke="#B5662A" stroke-width="1" marker-end="url(#harr)" opacity="0.4" stroke-dasharray="4,3"/>
+        <!-- 2→3 -->
+        <path d="M395,210 Q408,270 382,318" fill="none" stroke="#B8861E" stroke-width="1" marker-end="url(#harr)" opacity="0.4" stroke-dasharray="4,3"/>
+        <!-- 3→4 -->
+        <path d="M318,355 Q230,385 148,355" fill="none" stroke="#8AA8C8" stroke-width="1" marker-end="url(#harr)" opacity="0.4" stroke-dasharray="4,3"/>
+        <!-- 4→5 -->
+        <path d="M80,318 Q52,270 68,210" fill="none" stroke="#1F9268" stroke-width="1" marker-end="url(#harr)" opacity="0.4" stroke-dasharray="4,3"/>
+        <!-- 5→1 -->
+        <path d="M72,155 Q100,80 200,62" fill="none" stroke="#4A7A9A" stroke-width="1" marker-end="url(#harr)" opacity="0.4" stroke-dasharray="4,3"/>
+
+        <!-- Animated dots -->
+        <circle r="5" fill="#B5662A" filter="url(#hglow)" opacity="0.85">
+          <animateMotion dur="8s" repeatCount="indefinite" begin="0s">
+            <mpath xlink:href="#orbit-path"/>
+          </animateMotion>
+        </circle>
+        <circle r="3.5" fill="#1F9268" filter="url(#hglow)" opacity="0.75">
+          <animateMotion dur="8s" repeatCount="indefinite" begin="2.6s">
+            <mpath xlink:href="#orbit-path"/>
+          </animateMotion>
+        </circle>
+        <circle r="3" fill="#4A7A9A" opacity="0.7">
+          <animateMotion dur="8s" repeatCount="indefinite" begin="5.2s">
+            <mpath xlink:href="#orbit-path"/>
+          </animateMotion>
+        </circle>
+
+        <!-- Orbit path (invisible) -->
+        <path id="orbit-path" d="M230,50 Q400,80 400,175 Q420,290 350,340 Q260,395 110,340 Q30,295 60,175 Q65,80 230,50" fill="none" stroke="none"/>
+      </svg>
     </div>
   </section>
 
@@ -640,10 +712,10 @@
     <h2 class="section-title reveal">Not a fund.<br /><em>A family enterprise.</em></h2>
     <div class="about-grid">
       <div class="about-text reveal-left">
-        <p>Colden Capital is a <strong>family-owned private enterprise</strong> based in Fort Mill, South Carolina. We are not a registered investment advisor, broker-dealer, or financial institution of any kind.</p>
-        <p>We treat the market as a <strong>capital engine</strong> — using options, long-dated equity contracts (LEAPs), and disciplined short and long-term trades to generate the capital that funds tangible asset acquisitions.</p>
-        <p>Our model bridges two worlds: the precision of financial markets and the stability of Main Street assets. Every position taken in the market has a real-world target — a dump truck, a commercial property, an apartment building — something you can touch and that generates lasting cash flow.</p>
-        <p>From <strong>finance education</strong> that funds the first trade, to that trade funding the first asset, to that asset funding the next position — the flywheel turns and compounds for the family.</p>
+        <p>Colden Capital is a <strong>family-owned private enterprise</strong> based in South Carolina. We are not a registered investment advisor, broker-dealer, or financial institution of any kind.</p>
+        <p>We treat the market as a <strong>capital engine</strong> — using stock options, futures, and long-dated equity contracts to generate capital that funds real, income-producing asset acquisitions.</p>
+        <p>Our model connects two worlds: the precision of financial markets and the permanence of Main Street assets. Finance education generates the seed. The market grows it. Bank leverage amplifies it. Hard assets and franchises convert it all into durable, generational cash flow.</p>
+        <p>Every position in the market has a target — a dump truck, a trailer park, an apartment building, a franchise location — something tangible that generates income for the family for decades.</p>
       </div>
       <div class="about-pillars reveal-right">
         <div class="pillar">
@@ -654,7 +726,7 @@
         <div class="pillar">
           <div class="pillar-bar"></div>
           <h4>Market to Main Street</h4>
-          <p>Profits from options positions are redeployed into brick-and-mortar assets: equipment, commercial real estate, and service businesses that generate monthly income.</p>
+          <p>Options gains and leveraged capital are redeployed into real, brick-and-mortar income assets — trucks, real estate, and franchise businesses.</p>
         </div>
         <div class="pillar">
           <div class="pillar-bar"></div>
@@ -669,261 +741,226 @@
   <section id="flow">
     <div class="section-label">The Model</div>
     <h2 class="section-title reveal">Capital <em>Flow</em></h2>
-    <p class="reveal" style="color:var(--text-dim);max-width:640px;margin-bottom:0.5rem;font-size:1.02rem;line-height:1.9;">
-      Financial literacy and digital asset sales seed the engine. Stock options and futures grow the account. Bank leverage amplifies buying power. Hard assets and franchises convert it all into permanent, compounding cash flow.
+    <p class="flow-intro reveal">
+      Financial literacy and digital asset sales seed the engine. Options and futures grow the account. Bank leverage amplifies buying power. Hard assets and franchises lock in permanent cash flow — which reinvests and compounds the cycle.
     </p>
 
-    <div class="flow-diagram">
-      <div class="flow-svg-wrap reveal">
-        <svg id="flow-svg" viewBox="0 0 1100 680" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:700px;">
-          <defs>
-            <!-- gradients for arrows -->
-            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C07848"/><stop offset="100%" stop-color="#C8962A"/></linearGradient>
-            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C8962A"/><stop offset="100%" stop-color="#8AA8C8"/></linearGradient>
-            <linearGradient id="g3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8AA8C8"/><stop offset="100%" stop-color="#22A070"/></linearGradient>
-            <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22A070"/><stop offset="100%" stop-color="#5A8AAA"/></linearGradient>
-            <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22A070"/><stop offset="100%" stop-color="#C8962A"/></linearGradient>
-            <linearGradient id="g-loop" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#5A8AAA"/><stop offset="100%" stop-color="#C07848"/></linearGradient>
-            <!-- glow filters -->
-            <filter id="glow"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            <filter id="glow-sm"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            <!-- arrowheads -->
-            <marker id="arr1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#C8962A"/></marker>
-            <marker id="arr2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#8AA8C8"/></marker>
-            <marker id="arr3" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#22A070"/></marker>
-            <marker id="arr4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#5A8AAA"/></marker>
-            <marker id="arr5" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#C8962A"/></marker>
-            <marker id="arr-lp" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#C07848"/></marker>
-          </defs>
+    <div class="flow-svg-wrap reveal">
+      <svg viewBox="0 0 1100 680" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:700px;">
+        <defs>
+          <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#B5662A"/><stop offset="100%" stop-color="#B8861E"/></linearGradient>
+          <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#B8861E"/><stop offset="100%" stop-color="#8AA8C8"/></linearGradient>
+          <linearGradient id="g3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8AA8C8"/><stop offset="100%" stop-color="#1F9268"/></linearGradient>
+          <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#1F9268"/><stop offset="100%" stop-color="#4A7A9A"/></linearGradient>
+          <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#1F9268"/><stop offset="100%" stop-color="#B8861E"/></linearGradient>
+          <linearGradient id="g-lp" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#4A7A9A"/><stop offset="100%" stop-color="#B5662A"/></linearGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glow-sm"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <marker id="a1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#B8861E" opacity="0.7"/></marker>
+          <marker id="a2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#8AA8C8" opacity="0.7"/></marker>
+          <marker id="a3" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#1F9268" opacity="0.7"/></marker>
+          <marker id="a4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#4A7A9A" opacity="0.7"/></marker>
+          <marker id="a5" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#B8861E" opacity="0.7"/></marker>
+          <marker id="alp" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#B5662A" opacity="0.5"/></marker>
+        </defs>
 
-          <!-- ═══════════════════════════════════════════
-               ROW 1: top 3 nodes — Education, Market, Bank
-               ═══════════════════════════════════════════ -->
+        <!-- ── ROW 1 ── -->
 
-          <!-- NODE 1: Financial Literacy + Digital Assets (x=120, y=140) -->
-          <g transform="translate(120,140)">
-            <rect x="-100" y="-70" width="200" height="140" rx="4" fill="#161918" stroke="#C07848" stroke-width="1.2"/>
-            <rect x="-100" y="-70" width="200" height="3" rx="2" fill="#C07848" opacity="0.7"/>
-            <text y="-40" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2.5" fill="#C07848">STAGE 01</text>
-            <text y="-18" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="700" fill="#EDE8E1">Financial</text>
-            <text y="5" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="300" font-style="italic" fill="#EDE8E1">Literacy</text>
-            <line x1="-40" y1="18" x2="40" y2="18" stroke="#C07848" stroke-width="0.5" opacity="0.4"/>
-            <text y="35" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Digital Asset Creation</text>
-            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Content · Courses · Sales</text>
-          </g>
+        <!-- Node 1: Financial Literacy + Digital Assets -->
+        <g transform="translate(120,140)">
+          <rect x="-100" y="-68" width="200" height="136" rx="3" fill="#FDFBF8" stroke="#B5662A" stroke-width="1"/>
+          <rect x="-100" y="-68" width="200" height="2.5" rx="1" fill="#B5662A" opacity="0.8"/>
+          <text y="-40" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" letter-spacing="2.5" fill="#B5662A">STAGE 01</text>
+          <text y="-18" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="20" font-weight="700" fill="#1A1714">Financial</text>
+          <text y="4" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="20" font-weight="300" font-style="italic" fill="#1A1714">Literacy</text>
+          <line x1="-42" y1="17" x2="42" y2="17" stroke="#B5662A" stroke-width="0.5" opacity="0.3"/>
+          <text y="32" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#A89E94">Digital Asset Creation</text>
+          <text y="46" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#A89E94">Content · Courses · Sales</text>
+        </g>
 
-          <!-- ARROW 1→2 horizontal -->
-          <line x1="222" y1="140" x2="318" y2="140" stroke="url(#g1)" stroke-width="1.5" marker-end="url(#arr1)" opacity="0.8"/>
-          <text x="270" y="128" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#C8962A" letter-spacing="1.5">DEPLOYS</text>
+        <!-- Arrow 1→2 -->
+        <line x1="222" y1="140" x2="318" y2="140" stroke="url(#g1)" stroke-width="1.5" marker-end="url(#a1)" opacity="0.7"/>
+        <text x="270" y="128" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#B8861E" letter-spacing="1.5">DEPLOYS</text>
 
-          <!-- NODE 2: Stock Market Execution (x=450, y=140) -->
-          <g transform="translate(450,140)">
-            <rect x="-110" y="-75" width="220" height="150" rx="4" fill="#161918" stroke="#C8962A" stroke-width="1.2"/>
-            <rect x="-110" y="-75" width="220" height="3" rx="2" fill="#C8962A" opacity="0.7"/>
-            <text y="-44" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2.5" fill="#C8962A">STAGE 02</text>
-            <text y="-22" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="700" fill="#EDE8E1">Market</text>
-            <text y="2" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="300" font-style="italic" fill="#EDE8E1">Execution</text>
-            <line x1="-50" y1="15" x2="50" y2="15" stroke="#C8962A" stroke-width="0.5" opacity="0.4"/>
-            <text y="32" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Stock Options · Futures</text>
-            <text y="47" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">LEAPs · PUTs · CALLs</text>
-            <text y="62" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#C8962A">Short &amp; Long-Term Vehicles</text>
-          </g>
+        <!-- Node 2: Market Execution -->
+        <g transform="translate(450,140)">
+          <rect x="-110" y="-75" width="220" height="150" rx="3" fill="#FDFBF8" stroke="#B8861E" stroke-width="1"/>
+          <rect x="-110" y="-75" width="220" height="2.5" rx="1" fill="#B8861E" opacity="0.8"/>
+          <text y="-44" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" letter-spacing="2.5" fill="#B8861E">STAGE 02</text>
+          <text y="-22" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="20" font-weight="700" fill="#1A1714">Market</text>
+          <text y="2" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="20" font-weight="300" font-style="italic" fill="#1A1714">Execution</text>
+          <line x1="-52" y1="16" x2="52" y2="16" stroke="#B8861E" stroke-width="0.5" opacity="0.3"/>
+          <text y="32" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#A89E94">Stock Options · Futures</text>
+          <text y="46" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#A89E94">LEAPs · PUTs · CALLs</text>
+          <text y="60" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#B8861E">Short &amp; Long-Term Vehicles</text>
+        </g>
 
-          <!-- ARROW 2→3 horizontal -->
-          <line x1="562" y1="140" x2="658" y2="140" stroke="url(#g2)" stroke-width="1.5" marker-end="url(#arr2)" opacity="0.8"/>
-          <text x="610" y="128" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8AA8C8" letter-spacing="1.5">BUILDS</text>
+        <!-- Arrow 2→3 -->
+        <line x1="562" y1="140" x2="658" y2="140" stroke="url(#g2)" stroke-width="1.5" marker-end="url(#a2)" opacity="0.7"/>
+        <text x="610" y="128" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#8AA8C8" letter-spacing="1.5">BUILDS</text>
 
-          <!-- NODE 3: Bank Leverage (x=790, y=140) -->
-          <g transform="translate(790,140)">
-            <rect x="-110" y="-70" width="220" height="140" rx="4" fill="#161918" stroke="#8AA8C8" stroke-width="1.2"/>
-            <rect x="-110" y="-70" width="220" height="3" rx="2" fill="#8AA8C8" opacity="0.7"/>
-            <text y="-40" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2.5" fill="#8AA8C8">STAGE 03</text>
-            <text y="-18" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="700" fill="#EDE8E1">Bank</text>
-            <text y="5" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="300" font-style="italic" fill="#EDE8E1">Leverage</text>
-            <line x1="-50" y1="18" x2="50" y2="18" stroke="#8AA8C8" stroke-width="0.5" opacity="0.4"/>
-            <text y="35" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Loans vs. Account Value</text>
-            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Portfolio Margin · SBLOCs</text>
-          </g>
+        <!-- Node 3: Bank Leverage -->
+        <g transform="translate(790,140)">
+          <rect x="-110" y="-68" width="220" height="136" rx="3" fill="#FDFBF8" stroke="#8AA8C8" stroke-width="1"/>
+          <rect x="-110" y="-68" width="220" height="2.5" rx="1" fill="#8AA8C8" opacity="0.8"/>
+          <text y="-40" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" letter-spacing="2.5" fill="#8AA8C8">STAGE 03</text>
+          <text y="-18" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="20" font-weight="700" fill="#1A1714">Bank</text>
+          <text y="4" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="20" font-weight="300" font-style="italic" fill="#1A1714">Leverage</text>
+          <line x1="-50" y1="17" x2="50" y2="17" stroke="#8AA8C8" stroke-width="0.5" opacity="0.3"/>
+          <text y="32" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#A89E94">Loans vs. Account Value</text>
+          <text y="46" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#A89E94">SBLOCs · Portfolio Margin</text>
+        </g>
 
-          <!-- ═══════════════════════════════════════════
-               CONNECTOR: Bank → down to Row 2 split
-               ═══════════════════════════════════════════ -->
-          <!-- Vertical drop from Bank node center to split point -->
-          <line x1="790" y1="212" x2="790" y2="310" stroke="url(#g3)" stroke-width="1.5" opacity="0.7"/>
-          <!-- Horizontal split line -->
-          <line x1="240" y1="310" x2="790" y2="310" stroke="#22A070" stroke-width="1" opacity="0.35"/>
-          <!-- Vertical drops to each bottom node -->
-          <line x1="240" y1="310" x2="240" y2="360" stroke="#22A070" stroke-width="1.2" marker-end="url(#arr3)" opacity="0.7"/>
-          <line x1="450" y1="310" x2="450" y2="360" stroke="#22A070" stroke-width="1.2" marker-end="url(#arr3)" opacity="0.7"/>
-          <line x1="660" y1="310" x2="660" y2="360" stroke="#5A8AAA" stroke-width="1.2" marker-end="url(#arr4)" opacity="0.7"/>
-          <line x1="900" y1="310" x2="900" y2="360" stroke="#C8962A" stroke-width="1.2" marker-end="url(#arr5)" opacity="0.7"/>
-          <!-- label on split -->
-          <text x="515" y="302" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#4A4540" letter-spacing="2">CAPITAL DEPLOYS INTO</text>
+        <!-- ── CONNECTOR: Bank → split → Row 2 ── -->
+        <line x1="790" y1="210" x2="790" y2="306" stroke="#8AA8C8" stroke-width="1.2" opacity="0.5"/>
+        <line x1="240" y1="306" x2="790" y2="306" stroke="rgba(100,80,55,0.12)" stroke-width="1"/>
+        <text x="515" y="298" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#A89E94" letter-spacing="2">CAPITAL DEPLOYS INTO</text>
 
-          <!-- ═══════════════════════════════════════════
-               ROW 2: bottom 4 asset nodes
-               ═══════════════════════════════════════════ -->
+        <line x1="240" y1="306" x2="240" y2="356" stroke="#1F9268" stroke-width="1.2" marker-end="url(#a3)" opacity="0.6"/>
+        <line x1="450" y1="306" x2="450" y2="356" stroke="#1F9268" stroke-width="1.2" marker-end="url(#a3)" opacity="0.6"/>
+        <line x1="660" y1="306" x2="660" y2="356" stroke="#4A7A9A" stroke-width="1.2" marker-end="url(#a4)" opacity="0.6"/>
+        <line x1="900" y1="306" x2="900" y2="356" stroke="#B8861E" stroke-width="1.2" marker-end="url(#a5)" opacity="0.6"/>
 
-          <!-- NODE 4: Hard Assets — Transport (x=240, y=490) -->
-          <g transform="translate(240,490)">
-            <rect x="-110" y="-120" width="220" height="240" rx="4" fill="#161918" stroke="#22A070" stroke-width="1.2"/>
-            <rect x="-110" y="-120" width="220" height="3" rx="2" fill="#22A070" opacity="0.7"/>
-            <text y="-89" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2" fill="#22A070">STAGE 04A</text>
-            <text y="-65" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="19" font-weight="700" fill="#EDE8E1">Transport</text>
-            <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#EDE8E1">Assets</text>
-            <line x1="-55" y1="-30" x2="55" y2="-30" stroke="#22A070" stroke-width="0.5" opacity="0.4"/>
-            <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">18-Wheeler Trailer Rentals</text>
-            <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Dump Trucks</text>
-            <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Heavy Equipment Leasing</text>
-            <line x1="-55" y1="32" x2="55" y2="32" stroke="#22A070" stroke-width="0.5" opacity="0.25"/>
-            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#22A070">$3,000–$6,000 / unit / mo</text>
-            <text y="67" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">High demand · Low mgmt</text>
-            <text y="84" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">Infrastructure-backed</text>
-            <text y="100" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">Daily revenue generation</text>
-          </g>
+        <!-- ── ROW 2 ── -->
 
-          <!-- NODE 5: Real Estate (x=450, y=490) -->
-          <g transform="translate(450,490)">
-            <rect x="-100" y="-120" width="200" height="240" rx="4" fill="#161918" stroke="#22A070" stroke-width="1.2"/>
-            <rect x="-100" y="-120" width="200" height="3" rx="2" fill="#22A070" opacity="0.7"/>
-            <text y="-89" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2" fill="#22A070">STAGE 04B</text>
-            <text y="-65" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="19" font-weight="700" fill="#EDE8E1">Real Estate</text>
-            <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#EDE8E1">Accumulation</text>
-            <line x1="-50" y1="-30" x2="50" y2="-30" stroke="#22A070" stroke-width="0.5" opacity="0.4"/>
-            <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Land Acquisition</text>
-            <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Trailer Parks</text>
-            <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Apartment Buildings</text>
-            <text y="34" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Commercial Properties</text>
-            <line x1="-50" y1="48" x2="50" y2="48" stroke="#22A070" stroke-width="0.5" opacity="0.25"/>
-            <text y="66" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#22A070">Appreciation + Rental Income</text>
-            <text y="84" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">Charlotte MSA corridor</text>
-            <text y="100" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">Long-term hold strategy</text>
-          </g>
+        <!-- Node 4A: Transport Assets -->
+        <g transform="translate(240,488)">
+          <rect x="-110" y="-118" width="220" height="236" rx="3" fill="#FDFBF8" stroke="#1F9268" stroke-width="1"/>
+          <rect x="-110" y="-118" width="220" height="2.5" rx="1" fill="#1F9268" opacity="0.8"/>
+          <text y="-88" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" letter-spacing="2" fill="#1F9268">STAGE 04A</text>
+          <text y="-64" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="18" font-weight="700" fill="#1A1714">Transport</text>
+          <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#1A1714">Assets</text>
+          <line x1="-52" y1="-30" x2="52" y2="-30" stroke="#1F9268" stroke-width="0.5" opacity="0.3"/>
+          <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">18-Wheeler Trailer Rentals</text>
+          <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Dump Trucks</text>
+          <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Heavy Equipment Leasing</text>
+          <line x1="-52" y1="32" x2="52" y2="32" stroke="#1F9268" stroke-width="0.5" opacity="0.2"/>
+          <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#1F9268">$3,000–$6,000 / unit / mo</text>
+          <text y="66" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">High demand · Low mgmt</text>
+          <text y="82" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">Infrastructure-backed</text>
+          <text y="98" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">Daily revenue generation</text>
+        </g>
 
-          <!-- NODE 6: Franchises (x=660, y=490) -->
-          <g transform="translate(660,490)">
-            <rect x="-100" y="-120" width="200" height="240" rx="4" fill="#161918" stroke="#5A8AAA" stroke-width="1.2"/>
-            <rect x="-100" y="-120" width="200" height="3" rx="2" fill="#5A8AAA" opacity="0.7"/>
-            <text y="-89" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2" fill="#5A8AAA">STAGE 04C</text>
-            <text y="-65" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="19" font-weight="700" fill="#EDE8E1">Franchise</text>
-            <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#EDE8E1">Opportunities</text>
-            <line x1="-50" y1="-30" x2="50" y2="-30" stroke="#5A8AAA" stroke-width="0.5" opacity="0.4"/>
-            <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Car Wash</text>
-            <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Laundromat</text>
-            <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Food Services</text>
-            <line x1="-50" y1="32" x2="50" y2="32" stroke="#5A8AAA" stroke-width="0.5" opacity="0.25"/>
-            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#5A8AAA">Proven models · Brand equity</text>
-            <text y="67" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A6A">Recurring foot traffic</text>
-            <text y="84" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A6A">Recession-resilient demand</text>
-            <text y="100" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A6A">Owner-operated or managed</text>
-          </g>
+        <!-- Node 4B: Real Estate -->
+        <g transform="translate(450,488)">
+          <rect x="-100" y="-118" width="200" height="236" rx="3" fill="#FDFBF8" stroke="#1F9268" stroke-width="1"/>
+          <rect x="-100" y="-118" width="200" height="2.5" rx="1" fill="#1F9268" opacity="0.8"/>
+          <text y="-88" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" letter-spacing="2" fill="#1F9268">STAGE 04B</text>
+          <text y="-64" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="18" font-weight="700" fill="#1A1714">Real Estate</text>
+          <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#1A1714">Accumulation</text>
+          <line x1="-50" y1="-30" x2="50" y2="-30" stroke="#1F9268" stroke-width="0.5" opacity="0.3"/>
+          <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Land Acquisition</text>
+          <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Trailer Parks</text>
+          <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Apartment Buildings</text>
+          <text y="34" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Commercial Properties</text>
+          <line x1="-50" y1="48" x2="50" y2="48" stroke="#1F9268" stroke-width="0.5" opacity="0.2"/>
+          <text y="66" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#1F9268">Appreciation + Rent Income</text>
+          <text y="82" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">Long-term hold strategy</text>
+          <text y="98" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">Equity build · Appreciation</text>
+        </g>
 
-          <!-- NODE 7: Cash Flow Output (x=900, y=490) -->
-          <g transform="translate(900,490)">
-            <rect x="-90" y="-120" width="180" height="240" rx="4" fill="#161918" stroke="#C8962A" stroke-width="1.5"/>
-            <rect x="-90" y="-120" width="180" height="3" rx="2" fill="#C8962A" opacity="0.9"/>
-            <text y="-89" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2" fill="#C8962A">OUTPUT</text>
-            <text y="-62" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="24" font-weight="700" fill="#EDE8E1">Cash</text>
-            <text y="-38" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="24" font-weight="300" font-style="italic" fill="#C8962A">Flow</text>
-            <line x1="-45" y1="-24" x2="45" y2="-24" stroke="#C8962A" stroke-width="0.5" opacity="0.5"/>
-            <text y="-8" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Monthly Income</text>
-            <text y="8" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Equity Build</text>
-            <text y="24" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Appreciation</text>
-            <line x1="-45" y1="38" x2="45" y2="38" stroke="#C8962A" stroke-width="0.5" opacity="0.4"/>
-            <text y="56" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#C8962A">Reinvest</text>
-            <text y="72" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#C8962A">Distribute</text>
-            <text y="88" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#C8962A">Expand</text>
-            <text y="104" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A4030">Legacy · Generational</text>
-          </g>
+        <!-- Node 4C: Franchises -->
+        <g transform="translate(660,488)">
+          <rect x="-100" y="-118" width="200" height="236" rx="3" fill="#FDFBF8" stroke="#4A7A9A" stroke-width="1"/>
+          <rect x="-100" y="-118" width="200" height="2.5" rx="1" fill="#4A7A9A" opacity="0.8"/>
+          <text y="-88" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" letter-spacing="2" fill="#4A7A9A">STAGE 04C</text>
+          <text y="-64" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="18" font-weight="700" fill="#1A1714">Franchise</text>
+          <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#1A1714">Opportunities</text>
+          <line x1="-50" y1="-30" x2="50" y2="-30" stroke="#4A7A9A" stroke-width="0.5" opacity="0.3"/>
+          <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Car Wash</text>
+          <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Laundromat</text>
+          <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Food Services</text>
+          <line x1="-50" y1="32" x2="50" y2="32" stroke="#4A7A9A" stroke-width="0.5" opacity="0.2"/>
+          <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#4A7A9A">Proven models · Brand equity</text>
+          <text y="66" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">Recurring foot traffic</text>
+          <text y="82" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">Recession-resilient demand</text>
+          <text y="98" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">Owner-op or managed</text>
+        </g>
 
-          <!-- ═══════════════════════════════════════════
-               LOOP: Cash Flow reinvest back to Stage 2
-               ═══════════════════════════════════════════ -->
-          <path d="M 900 370 Q 900 280 790 250 Q 680 220 562 170" stroke="url(#g-loop)" stroke-width="1" fill="none" stroke-dasharray="6,4" marker-end="url(#arr-lp)" opacity="0.4"/>
-          <text x="790" y="268" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A4540" letter-spacing="1.5">REINVESTED →</text>
+        <!-- Node 5: Cash Flow Output -->
+        <g transform="translate(900,488)">
+          <rect x="-88" y="-118" width="176" height="236" rx="3" fill="#FDFBF8" stroke="#B5662A" stroke-width="1.5"/>
+          <rect x="-88" y="-118" width="176" height="2.5" rx="1" fill="#B5662A" opacity="0.9"/>
+          <text y="-88" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" letter-spacing="2" fill="#B5662A">OUTPUT</text>
+          <text y="-60" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="26" font-weight="700" fill="#1A1714">Cash</text>
+          <text y="-36" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="26" font-weight="300" font-style="italic" fill="#B5662A">Flow</text>
+          <line x1="-44" y1="-22" x2="44" y2="-22" stroke="#B5662A" stroke-width="0.5" opacity="0.4"/>
+          <text y="-6" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Monthly Income</text>
+          <text y="10" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Equity Build</text>
+          <text y="26" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#6B6058">Appreciation</text>
+          <line x1="-44" y1="40" x2="44" y2="40" stroke="#B5662A" stroke-width="0.5" opacity="0.3"/>
+          <text y="58" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#B5662A">Reinvest</text>
+          <text y="74" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#B5662A">Distribute</text>
+          <text y="90" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#B5662A">Expand</text>
+          <text y="106" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#A89E94">Legacy · Generational</text>
+        </g>
 
-          <!-- ═══════════════════════════════════════════
-               ANIMATED DOTS
-               ═══════════════════════════════════════════ -->
-          <!-- Paths for motion (invisible) -->
-          <path id="m1" d="M222,140 L318,140" fill="none" stroke="none"/>
-          <path id="m2" d="M562,140 L658,140" fill="none" stroke="none"/>
-          <path id="m3" d="M790,212 L790,305" fill="none" stroke="none"/>
-          <path id="m4a" d="M240,310 L240,360" fill="none" stroke="none"/>
-          <path id="m4b" d="M450,310 L450,360" fill="none" stroke="none"/>
-          <path id="m4c" d="M660,310 L660,360" fill="none" stroke="none"/>
-          <path id="m4d" d="M900,310 L900,360" fill="none" stroke="none"/>
-          <path id="m-lp" d="M 900 370 Q 900 280 790 250 Q 680 220 562 170" fill="none" stroke="none"/>
+        <!-- ── REINVEST LOOP ── -->
+        <path d="M 900 370 Q 900 275 790 248 Q 680 220 562 160" stroke="url(#g-lp)" stroke-width="1" fill="none" stroke-dasharray="5,4" marker-end="url(#alp)" opacity="0.35"/>
+        <text x="800" y="266" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#A89E94" letter-spacing="1">REINVESTED →</text>
 
-          <circle r="4.5" fill="#C8962A" filter="url(#glow)" opacity="0.95">
-            <animateMotion dur="2s" repeatCount="indefinite" begin="0s"><mpath xlink:href="#m1"/></animateMotion>
-          </circle>
-          <circle r="4.5" fill="#8AA8C8" filter="url(#glow)" opacity="0.95">
-            <animateMotion dur="2s" repeatCount="indefinite" begin="1s"><mpath xlink:href="#m2"/></animateMotion>
-          </circle>
-          <circle r="4" fill="#22A070" filter="url(#glow-sm)" opacity="0.9">
-            <animateMotion dur="1.5s" repeatCount="indefinite" begin="2s"><mpath xlink:href="#m3"/></animateMotion>
-          </circle>
-          <circle r="3.5" fill="#22A070" filter="url(#glow-sm)" opacity="0.85">
-            <animateMotion dur="1.2s" repeatCount="indefinite" begin="3.5s"><mpath xlink:href="#m4a"/></animateMotion>
-          </circle>
-          <circle r="3.5" fill="#22A070" filter="url(#glow-sm)" opacity="0.85">
-            <animateMotion dur="1.2s" repeatCount="indefinite" begin="3.9s"><mpath xlink:href="#m4b"/></animateMotion>
-          </circle>
-          <circle r="3.5" fill="#5A8AAA" filter="url(#glow-sm)" opacity="0.85">
-            <animateMotion dur="1.2s" repeatCount="indefinite" begin="4.3s"><mpath xlink:href="#m4c"/></animateMotion>
-          </circle>
-          <circle r="3.5" fill="#C8962A" filter="url(#glow-sm)" opacity="0.85">
-            <animateMotion dur="1.2s" repeatCount="indefinite" begin="4.7s"><mpath xlink:href="#m4d"/></animateMotion>
-          </circle>
-          <circle r="3" fill="#C07848" opacity="0.55">
-            <animateMotion dur="5s" repeatCount="indefinite" begin="0s"><mpath xlink:href="#m-lp"/></animateMotion>
-          </circle>
-        </svg>
-      </div>
+        <!-- ── MOTION PATHS ── -->
+        <path id="mp1" d="M222,140 L318,140" fill="none" stroke="none"/>
+        <path id="mp2" d="M562,140 L658,140" fill="none" stroke="none"/>
+        <path id="mp3" d="M790,212 L790,302" fill="none" stroke="none"/>
+        <path id="mp4a" d="M240,306 L240,356" fill="none" stroke="none"/>
+        <path id="mp4b" d="M450,306 L450,356" fill="none" stroke="none"/>
+        <path id="mp4c" d="M660,306 L660,356" fill="none" stroke="none"/>
+        <path id="mp4d" d="M900,306 L900,356" fill="none" stroke="none"/>
+        <path id="mplp" d="M 900 370 Q 900 275 790 248 Q 680 220 562 160" fill="none" stroke="none"/>
 
-      <!-- Legend -->
-      <div class="flow-legend reveal">
-        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#C07848"></div>Financial Literacy &amp; Digital Sales</div>
-        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#C8962A"></div>Options &amp; Futures Execution</div>
-        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#8AA8C8"></div>Bank Leverage (SBLOCs / Portfolio Loans)</div>
-        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#22A070"></div>Hard Assets &amp; Real Estate</div>
-        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#5A8AAA"></div>Franchise Income</div>
-        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#C8962A;opacity:0.5;border:1px dashed #C8962A"></div>Reinvestment Loop</div>
-      </div>
+        <!-- ── ANIMATED DOTS ── -->
+        <circle r="4.5" fill="#B8861E" filter="url(#glow)" opacity="0.9"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath xlink:href="#mp1"/></animateMotion></circle>
+        <circle r="4.5" fill="#8AA8C8" filter="url(#glow)" opacity="0.9"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1s"><mpath xlink:href="#mp2"/></animateMotion></circle>
+        <circle r="4" fill="#1F9268" filter="url(#glow-sm)" opacity="0.85"><animateMotion dur="1.4s" repeatCount="indefinite" begin="2s"><mpath xlink:href="#mp3"/></animateMotion></circle>
+        <circle r="3.5" fill="#1F9268" filter="url(#glow-sm)" opacity="0.8"><animateMotion dur="1s" repeatCount="indefinite" begin="3.4s"><mpath xlink:href="#mp4a"/></animateMotion></circle>
+        <circle r="3.5" fill="#1F9268" filter="url(#glow-sm)" opacity="0.8"><animateMotion dur="1s" repeatCount="indefinite" begin="3.8s"><mpath xlink:href="#mp4b"/></animateMotion></circle>
+        <circle r="3.5" fill="#4A7A9A" filter="url(#glow-sm)" opacity="0.8"><animateMotion dur="1s" repeatCount="indefinite" begin="4.2s"><mpath xlink:href="#mp4c"/></animateMotion></circle>
+        <circle r="3.5" fill="#B8861E" filter="url(#glow-sm)" opacity="0.8"><animateMotion dur="1s" repeatCount="indefinite" begin="4.6s"><mpath xlink:href="#mp4d"/></animateMotion></circle>
+        <circle r="3" fill="#B5662A" opacity="0.5"><animateMotion dur="5s" repeatCount="indefinite" begin="0s"><mpath xlink:href="#mplp"/></animateMotion></circle>
+      </svg>
+    </div>
+
+    <div class="flow-legend reveal">
+      <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#B5662A"></div>Financial Literacy &amp; Digital Sales</div>
+      <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#B8861E"></div>Options &amp; Futures Execution</div>
+      <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#8AA8C8"></div>Bank Leverage (SBLOCs / Portfolio Loans)</div>
+      <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#1F9268"></div>Hard Assets &amp; Real Estate</div>
+      <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#4A7A9A"></div>Franchise Income</div>
+      <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#B5662A;opacity:0.45;outline:1px dashed #B5662A;outline-offset:1px"></div>Reinvestment Loop</div>
     </div>
   </section>
 
-  <!-- ── STRATEGY ── -->
+  <!-- ── STRATEGY FLYWHEEL ── -->
   <section id="strategy">
     <div class="section-label">How It Works</div>
     <h2 class="section-title reveal">The <em>Flywheel</em></h2>
-    <div class="steps-grid" style="grid-template-columns:repeat(5,1fr);">
-      <div class="steps-connector" style="left:10%;right:10%;"></div>
+    <div class="steps-grid">
+      <div class="steps-connector"></div>
       <div class="step reveal">
-        <div class="step-num" style="color:var(--copper);">I</div>
+        <div class="step-num">I</div>
         <h4>Literacy &amp; Digital Income</h4>
-        <p>Financial education and digital asset creation — courses, content, consulting — generate the first capital and build the knowledge base driving every decision downstream.</p>
+        <p>Financial education and digital asset creation — courses, content, consulting — generate the first capital and build the discipline that drives every decision downstream.</p>
       </div>
       <div class="step reveal">
-        <div class="step-num" style="color:var(--gold);">II</div>
+        <div class="step-num">II</div>
         <h4>Market Execution</h4>
         <p>Capital enters via stock options and futures — LEAPs, PUTs, short-term plays. Defined risk, high conviction, asymmetric upside. The account grows systematically.</p>
       </div>
       <div class="step reveal">
-        <div class="step-num" style="color:#8AA8C8;">III</div>
+        <div class="step-num">III</div>
         <h4>Bank Leverage</h4>
-        <p>A grown account unlocks SBLOCs and portfolio margin loans secured against account value. Capital is amplified without liquidating positions — buying power multiplied.</p>
+        <p>A grown account unlocks SBLOCs and portfolio margin loans secured against account value. Capital is amplified without liquidating positions.</p>
       </div>
       <div class="step reveal">
-        <div class="step-num" style="color:var(--emerald-light);">IV</div>
+        <div class="step-num">IV</div>
         <h4>Hard Asset Deployment</h4>
-        <p>Leveraged capital acquires income-producing hard assets: 18-wheeler trailer rentals, dump trucks, land, trailer parks, apartments, and commercial real estate.</p>
+        <p>Leveraged capital acquires income-producing assets: 18-wheeler trailer rentals, dump trucks, land, trailer parks, apartments, and commercial real estate.</p>
       </div>
       <div class="step reveal">
-        <div class="step-num" style="color:var(--diamond);">V</div>
+        <div class="step-num">V</div>
         <h4>Franchise &amp; Reinvest</h4>
-        <p>Cash flow funds franchise opportunities — car washes, laundromats, food services — with proven recurring revenue models. Surplus reinvests into Stage II, compounding the flywheel.</p>
+        <p>Cash flow funds franchises — car washes, laundromats, food services. Surplus reinvests into Stage II, compounding the flywheel each turn.</p>
       </div>
     </div>
   </section>
@@ -933,48 +970,45 @@
     <div class="section-label">Venture Targets</div>
     <h2 class="section-title reveal">Where the<br /><em>Capital Goes</em></h2>
     <div class="ventures-grid">
-
       <div class="venture-card reveal">
         <div class="venture-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#C07848" stroke-width="1.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B5662A" stroke-width="1.5">
             <path d="M1 17V9l6-6h10l6 6v8M1 17h22M8 17v-4h8v4"/>
             <circle cx="5.5" cy="17.5" r="1.5"/><circle cx="18.5" cy="17.5" r="1.5"/>
           </svg>
         </div>
-        <h4>Dump Trucks &amp; Equipment</h4>
-        <p>Commercial dump trucks and heavy equipment leased to contractors and operators. Physical assets with strong daily demand in construction and infrastructure markets.</p>
+        <h4>Transport &amp; Equipment</h4>
+        <p>18-wheeler trailer rentals, dump trucks, and heavy equipment leased to contractors and operators. Physical assets with strong daily demand in construction and infrastructure.</p>
         <div class="venture-metric">
-          <strong>$3,000 – $6,000</strong> / unit / month · Low management overhead · Recession-resilient demand
+          <strong>$3,000–$6,000</strong> / unit / month · Low overhead · Infrastructure-backed demand
         </div>
       </div>
-
       <div class="venture-card reveal">
         <div class="venture-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#22A070" stroke-width="1.5">
-            <rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M2 9h20M2 15h6"/>
-          </svg>
-        </div>
-        <h4>Commercial Real Estate</h4>
-        <p>Small commercial properties, storage facilities, and mixed-use buildings in the Fort Mill / Charlotte corridor. Long-term hold strategy for appreciation and steady rental income.</p>
-        <div class="venture-metric">
-          <strong>Long-term hold</strong> · Charlotte MSA growth market · Appreciation + rent income
-        </div>
-      </div>
-
-      <div class="venture-card reveal">
-        <div class="venture-icon-wrap">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#5A8AAA" stroke-width="1.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1F9268" stroke-width="1.5">
             <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
           </svg>
         </div>
-        <h4>Apartment Buildings</h4>
-        <p>Multifamily residential units targeting workforce housing in high-growth Southeast markets. Stable occupancy, predictable income, and long-term equity build through principal paydown.</p>
+        <h4>Real Estate</h4>
+        <p>Land acquisition, trailer parks, apartment buildings, and commercial properties. Long-term hold strategy for appreciation, rental income, and equity build across high-growth markets.</p>
         <div class="venture-metric">
-          <strong>Multifamily</strong> · Workforce housing · Stable occupancy · Equity build
+          <strong>Long-term hold</strong> · Appreciation + rental income · Equity compounding
         </div>
       </div>
-
+      <div class="venture-card reveal">
+        <div class="venture-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4A7A9A" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="18" rx="2"/>
+            <path d="M8 3v18M2 9h6M2 15h6"/>
+          </svg>
+        </div>
+        <h4>Franchise Income</h4>
+        <p>Car washes, laundromats, and food service franchises — proven business models with recurring foot traffic, brand equity, and recession-resilient demand. Owner-operated or managed.</p>
+        <div class="venture-metric">
+          <strong>Proven models</strong> · Recurring revenue · Scalable locations
+        </div>
+      </div>
     </div>
   </section>
 
@@ -985,7 +1019,7 @@
     <div class="edu-grid">
       <div class="edu-text reveal-left">
         <p>The capital flow starts with knowledge. <strong>Colden Capital's education arm</strong> teaches the mechanics of options trading, risk management, and market structure — converting information into actionable, repeatable strategy.</p>
-        <p>Finance literacy isn't just the seed capital for our first trade. It's the ongoing fuel that compounds the entire model. Every student who learns our system potentially becomes a client, partner, or participant in the next asset acquisition.</p>
+        <p>Finance literacy isn't just the seed capital for the first trade. It's the ongoing engine that compounds the entire model. Digital asset creation and content sales generate income while building the audience that participates in every stage of the model.</p>
         <p><strong>Education generates capital. Capital generates assets. Assets generate income. Income generates legacy.</strong></p>
       </div>
       <div class="edu-modules reveal-right">
@@ -1007,7 +1041,7 @@
         <div class="edu-module">
           <div class="edu-module-num">04 · ASSETS</div>
           <h5>From Market to Brick</h5>
-          <p>How market gains convert into real assets — the bridge from trading to tangible ownership and cash flow.</p>
+          <p>How market gains and bank leverage convert into real asset ownership — the bridge from trading to tangible cash flow.</p>
         </div>
       </div>
     </div>
@@ -1030,11 +1064,11 @@
 
   <footer>
     <span class="footer-logo">Colden Capital</span>
-    <p>© 2026 Colden Capital · Fort Mill, South Carolina · All rights reserved.</p>
+    <p>© 2026 Colden Capital · South Carolina · All rights reserved.</p>
     <div class="footer-right">
       <p>Private Family Enterprise · Not a Financial Institution</p>
       <a href="https://x.com/COLDENCAPITAL" target="_blank" rel="noopener noreferrer" class="x-link">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         @COLDENCAPITAL
       </a>
     </div>
@@ -1043,9 +1077,7 @@
   <script>
     /* ── NAV SCROLL ── */
     const nav = document.getElementById('mainNav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
-    });
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
 
     /* ── MOBILE MENU ── */
     const toggle = document.querySelector('.nav-toggle');
@@ -1060,84 +1092,36 @@
     }));
 
     /* ── REVEAL ON SCROLL ── */
-    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    const revealObs = new IntersectionObserver((entries) => {
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revObs = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
-        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 90);
       });
-    }, { threshold: 0.08 });
-    reveals.forEach(el => revealObs.observe(el));
+    }, { threshold: 0.07 });
+    revealEls.forEach(el => revObs.observe(el));
 
-    /* ── HERO PARTICLE CANVAS ── */
-    (function() {
-      const canvas = document.getElementById('hero-canvas');
-      const ctx = canvas.getContext('2d');
-      let W, H, particles, animId;
+    /*
+    ═══════════════════════════════════════════════════════════════
+    FABLE 5 READY — AI ADVISOR PLACEHOLDER
+    When claude-fable-5 is available, replace this block with:
 
-      const COLORS = ['rgba(192,120,72,', 'rgba(200,150,42,', 'rgba(34,160,112,', 'rgba(90,138,170,'];
-
-      function resize() {
-        W = canvas.width = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
-        init();
+    async function askCapitalAdvisor(userMessage) {
+      const stream = await client.messages.stream({
+        model: 'claude-fable-5',
+        max_tokens: 1024,
+        system: `You are the Colden Capital AI advisor. You understand the 5-stage
+                 capital flow model: Financial Literacy → Market Execution (options/futures)
+                 → Bank Leverage (SBLOCs) → Hard Assets (trucks, RE, trailer parks,
+                 apartments, commercial) → Franchises (car wash, laundromat, food).
+                 Answer questions about the model clearly and concisely.`,
+        messages: [{ role: 'user', content: userMessage }]
+      });
+      for await (const text of stream.textStream) {
+        // stream text to UI element
       }
-
-      function rand(a, b) { return a + Math.random() * (b - a); }
-
-      function init() {
-        particles = [];
-        const count = Math.floor((W * H) / 14000);
-        for (let i = 0; i < count; i++) {
-          particles.push({
-            x: rand(0, W), y: rand(0, H),
-            vx: rand(-0.15, 0.15), vy: rand(-0.2, -0.05),
-            r: rand(1, 2.5),
-            alpha: rand(0.15, 0.55),
-            color: COLORS[Math.floor(rand(0, COLORS.length))],
-          });
-        }
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, W, H);
-
-        // Draw connections
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const dx = particles[i].x - particles[j].x;
-            const dy = particles[i].y - particles[j].y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 120) {
-              ctx.beginPath();
-              ctx.strokeStyle = `rgba(192,120,72,${0.04 * (1 - dist / 120)})`;
-              ctx.lineWidth = 0.5;
-              ctx.moveTo(particles[i].x, particles[i].y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
-            }
-          }
-        }
-
-        particles.forEach(p => {
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = p.color + p.alpha + ')';
-          ctx.fill();
-
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.y < -10) { p.y = H + 10; p.x = rand(0, W); }
-          if (p.x < -10) p.x = W + 10;
-          if (p.x > W + 10) p.x = -10;
-        });
-
-        animId = requestAnimationFrame(draw);
-      }
-
-      window.addEventListener('resize', () => { cancelAnimationFrame(animId); resize(); draw(); });
-      resize();
-      draw();
-    })();
+    }
+    ═══════════════════════════════════════════════════════════════
+    */
   </script>
 </body>
 </html>
