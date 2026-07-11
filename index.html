@@ -5,63 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Colden Capital — Private Family Enterprise</title>
   <meta name="description" content="Colden Capital is a private family enterprise based in Fort Mill, South Carolina. We use options and long-dated equity contracts to fund real-world business acquisitions and income-producing assets." />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Colden Capital" />
   <meta property="og:description" content="A private family enterprise that leverages market vehicles to create real-world business and investment opportunities." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://coldencapital.com" />
   <meta property="og:image" content="https://coldencapital.com/og-image.png" />
-
-  <!-- Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@COLDENCAPITAL" />
   <meta name="twitter:title" content="Colden Capital" />
   <meta name="twitter:description" content="A private family enterprise that leverages market vehicles to create real-world business and investment opportunities." />
-
-  <!-- Favicon (inline SVG — no external file needed) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◆</text></svg>" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --platinum:       #8A9AAA;
-      --platinum-light: #5A6A7A;
-      --silver:         #7A8A9A;
-      --silver-mid:     #6A7A8A;
-      --copper:         #B06838;
-      --copper-light:   #C07848;
-      --copper-dim:     rgba(176,104,56,0.10);
-      --emerald:        #1A6E4E;
-      --emerald-light:  #1F9268;
-      --emerald-dim:    rgba(26,110,78,0.10);
-      --diamond:        #5A8AAA;
-      --diamond-ice:    #4A7A9A;
-      --diamond-dim:    rgba(90,138,170,0.08);
-      --bg:   #F7F3EE;
-      --bg2:  #F0EBE3;
-      --bg3:  #E8E1D8;
-      --text:     #1C1916;
-      --text-dim: #7A6F62;
-      --white:    #FDFAF6;
-      --border:    rgba(100,80,60,0.12);
-      --border-em: rgba(26,110,78,0.16);
-    }
-
-    .grad-logo {
-      background: linear-gradient(112deg,
-        #6A8A9A 0%, #C0D0DC 10%, #E8F2F8 20%, #A8BCC8 28%,
-        #C07848 36%, #E09A70 44%, #C8A888 50%,
-        #D4DDE6 58%, #EBF0F5 65%, #9AAFC2 72%,
-        #1C7A58 80%, #28B07C 88%, #C2DCF0 95%, #8AA8BC 100%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      filter: drop-shadow(0 0 12px rgba(40,176,124,0.18)) drop-shadow(0 1px 3px rgba(192,120,72,0.2));
+      --copper:        #C07848;
+      --copper-light:  #D4915A;
+      --copper-dim:    rgba(192,120,72,0.12);
+      --emerald:       #1A6E4E;
+      --emerald-light: #22A070;
+      --emerald-dim:   rgba(26,110,78,0.15);
+      --diamond:       #5A8AAA;
+      --diamond-dim:   rgba(90,138,170,0.12);
+      --gold:          #C8962A;
+      --bg:            #0D0F0E;
+      --bg2:           #111413;
+      --bg3:           #161918;
+      --bg4:           #1C1F1E;
+      --text:          #EDE8E1;
+      --text-dim:      #8A8078;
+      --text-muted:    #4A4540;
+      --border:        rgba(200,150,42,0.10);
+      --border-em:     rgba(26,110,78,0.20);
+      --border-cu:     rgba(192,120,72,0.18);
     }
 
     html { scroll-behavior: smooth; }
@@ -75,52 +53,38 @@
       overflow-x: hidden;
     }
 
-    body::after {
-      content: '';
-      position: fixed;
-      top: -20%; left: -10%;
-      width: 60vw; height: 60vw;
-      background: radial-gradient(ellipse, rgba(255,250,245,0.7) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.5;
-    }
-
+    /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.5rem 4rem;
-      background: rgba(247,243,238,0.92);
-      backdrop-filter: blur(16px);
+      background: rgba(13,15,14,0.88);
+      backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
+      transition: padding 0.3s;
     }
+
+    nav.scrolled { padding: 1rem 4rem; }
 
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+      font-size: 1.4rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+      background: linear-gradient(110deg, #C07848 0%, #C8962A 35%, #22A070 65%, #5A8AAA 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
     .nav-links a {
       font-family: 'DM Mono', monospace;
-      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--text-dim); text-decoration: none; transition: color 0.25s;
     }
 
     .nav-links a:hover { color: var(--emerald-light); }
 
+    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex; flex-direction: column; justify-content: center;
@@ -128,70 +92,76 @@
       position: relative; overflow: hidden;
     }
 
-    .hero-bg-line {
-      position: absolute; top: 0; bottom: 0; width: 1px;
-      background: linear-gradient(to bottom, transparent, var(--border-em) 30%, var(--border-em) 70%, transparent);
-      opacity: 0.5;
+    #hero-canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      pointer-events: none; z-index: 0; opacity: 0.65;
     }
-    .hero-bg-line:nth-child(1) { left: 33%; }
-    .hero-bg-line:nth-child(2) { left: 66%; }
 
-    .hero-orb {
-      position: absolute; right: 8%; top: 20%;
-      width: 420px; height: 420px; border-radius: 50%;
-      background: radial-gradient(ellipse at 40% 35%,
-        rgba(255,252,248,0.9) 0%, rgba(176,104,56,0.06) 40%,
-        rgba(26,110,78,0.05) 70%, transparent 100%);
-      border: 1px solid rgba(176,104,56,0.08);
-      pointer-events: none;
-    }
+    .hero-content { position: relative; z-index: 1; }
 
     .hero-tag {
       font-family: 'DM Mono', monospace;
-      font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase;
       color: var(--emerald-light); margin-bottom: 2rem;
       opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+      display: flex; align-items: center; gap: 1rem;
+    }
+
+    .hero-tag::before {
+      content: ''; display: block; width: 32px; height: 1px;
+      background: var(--emerald-light);
     }
 
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(4rem, 10vw, 9rem);
-      font-weight: 300; line-height: 0.92; letter-spacing: -0.01em;
+      font-size: clamp(4.5rem, 11vw, 10rem);
+      font-weight: 300; line-height: 0.9; letter-spacing: -0.02em;
       color: var(--text); margin-bottom: 2.5rem;
       opacity: 0; animation: fadeUp 0.9s 0.4s forwards;
     }
 
-    .hero-title em { font-style: italic; font-weight: 600; display: block; }
+    .hero-title em {
+      font-style: italic; font-weight: 600; display: block;
+      background: linear-gradient(112deg, #C07848 0%, #C8962A 30%, #22A070 60%, #5A8AAA 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
 
     .hero-sub {
-      max-width: 520px; font-size: 1rem;
-      color: var(--text-dim); line-height: 1.85; margin-bottom: 3rem;
+      max-width: 540px; font-size: 1.05rem;
+      color: var(--text-dim); line-height: 1.9; margin-bottom: 3rem;
       opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
     }
 
-    .hero-cta {
+    .hero-btns {
+      display: flex; gap: 1.25rem; flex-wrap: wrap;
+      opacity: 0; animation: fadeUp 0.9s 0.8s forwards;
+    }
+
+    .btn-primary {
       display: inline-flex; align-items: center; gap: 0.75rem;
       font-family: 'DM Mono', monospace;
-      font-size: 0.74rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--diamond); text-decoration: none;
-      border: 1px solid var(--border-em); padding: 1rem 2rem;
-      transition: all 0.3s;
-      opacity: 0; animation: fadeUp 0.9s 0.8s forwards;
-      position: relative; overflow: hidden;
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--bg); text-decoration: none; padding: 1rem 2rem;
+      background: linear-gradient(110deg, var(--copper) 0%, var(--gold) 50%, var(--emerald-light) 100%);
+      background-size: 200% 100%; background-position: 0% 0%;
+      transition: background-position 0.5s, transform 0.2s;
     }
 
-    .hero-cta::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(90deg, rgba(28,122,88,0.16), rgba(192,120,72,0.12));
-      opacity: 0; transition: opacity 0.3s;
+    .btn-primary:hover { background-position: 100% 0%; transform: translateY(-2px); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text-dim); text-decoration: none; padding: 1rem 2rem;
+      border: 1px solid var(--border-cu);
+      transition: border-color 0.3s, color 0.3s;
     }
 
-    .hero-cta:hover { border-color: var(--emerald-light); color: var(--text); }
-    .hero-cta:hover::before { opacity: 1; }
-    .hero-cta span, .hero-cta svg { position: relative; z-index: 1; }
+    .btn-ghost:hover { border-color: var(--copper); color: var(--copper-light); }
 
-    .hero-stat-row {
-      display: flex; gap: 4rem; margin-top: 5rem; padding-top: 3rem;
+    .hero-stats {
+      display: flex; gap: 3.5rem; margin-top: 5rem; padding-top: 3rem;
       border-top: 1px solid var(--border);
       opacity: 0; animation: fadeUp 0.9s 1s forwards;
     }
@@ -199,296 +169,398 @@
     .hero-stat strong {
       display: block;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem; font-weight: 400; line-height: 1;
-      background: linear-gradient(110deg, #B06838 0%, #C8962A 50%, #1A6E4E 100%);
+      font-size: 3rem; font-weight: 400; line-height: 1;
+      background: linear-gradient(110deg, #C07848 0%, #C8962A 50%, #22A070 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     .hero-stat span {
       font-family: 'DM Mono', monospace;
-      font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--text-dim);
+      font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text-muted);
     }
 
-    section { padding: 7rem 4rem; position: relative; }
+    /* ── SECTION BASE ── */
+    section { padding: 8rem 4rem; position: relative; }
 
     .section-label {
       font-family: 'DM Mono', monospace;
-      font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+      font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase;
       color: var(--emerald-light); margin-bottom: 1.5rem;
       display: flex; align-items: center; gap: 1rem;
     }
 
-    .section-label::after {
-      content: ''; flex: 1; max-width: 60px; height: 1px;
-      background: var(--emerald); opacity: 0.5;
-    }
+    .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--emerald-light); }
 
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      font-weight: 300; line-height: 1.1; color: var(--text); margin-bottom: 1.5rem;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 300; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem;
     }
 
     .section-title em { font-style: italic; font-weight: 600; }
 
-    #about {
-      background: var(--bg2);
-      border-top: 1px solid var(--border-em);
-      border-bottom: 1px solid var(--border-em);
-    }
+    /* ── ABOUT ── */
+    #about { background: var(--bg2); border-top: 1px solid var(--border-em); }
 
     #about .section-title em {
-      background: linear-gradient(90deg, #1A6E4E, #1F9268, #3A7A9A);
+      background: linear-gradient(90deg, #22A070, #5A8AAA);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 3rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; margin-top: 4rem; }
 
-    .about-text p { color: var(--text-dim); margin-bottom: 1.25rem; font-size: 1.05rem; line-height: 1.9; }
+    .about-text p { color: var(--text-dim); margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.95; }
     .about-text p strong { color: var(--text); font-weight: 500; }
 
-    .about-values { display: flex; flex-direction: column; gap: 1.5rem; }
+    .about-pillars { display: flex; flex-direction: column; gap: 1px; }
 
-    .value-card {
-      padding: 1.75rem; border: 1px solid var(--border);
+    .pillar {
+      padding: 2rem; border: 1px solid var(--border);
       background: var(--bg3); position: relative; overflow: hidden;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      transition: border-color 0.3s;
+      cursor: default;
     }
 
-    .value-card::before {
-      content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
-      background: linear-gradient(to bottom, var(--copper), var(--emerald-light), var(--diamond));
-      transform: scaleY(0); transition: transform 0.35s; transform-origin: bottom;
+    .pillar-bar {
+      position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+      transform: scaleY(0); transition: transform 0.4s; transform-origin: bottom;
     }
 
-    .value-card:hover { border-color: var(--border-em); box-shadow: 0 8px 40px rgba(28,122,88,0.14); }
-    .value-card:hover::before { transform: scaleY(1); }
+    .pillar:nth-child(1) .pillar-bar { background: var(--copper); }
+    .pillar:nth-child(2) .pillar-bar { background: var(--emerald-light); }
+    .pillar:nth-child(3) .pillar-bar { background: var(--diamond); }
 
-    .value-card h4 {
+    .pillar:hover { border-color: var(--border-em); }
+    .pillar:hover .pillar-bar { transform: scaleY(1); }
+
+    .pillar h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; font-weight: 600;
-      color: #2A2420; margin-bottom: 0.5rem;
+      font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;
     }
 
-    .value-card p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; }
+    .pillar p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.75; }
 
-    #strategy { background: var(--bg); }
+    /* ── CAPITAL FLOW ── */
+    #flow {
+      background: var(--bg); padding: 8rem 4rem;
+      border-top: 1px solid var(--border-cu);
+      border-bottom: 1px solid var(--border-cu);
+    }
+
+    #flow .section-title em {
+      background: linear-gradient(90deg, #C07848, #C8962A);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .flow-diagram {
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    .flow-svg-wrap {
+      width: 100%; max-width: 960px; margin: 0 auto;
+    }
+
+    /* ── STRATEGY STEPS ── */
+    #strategy { background: var(--bg2); }
 
     #strategy .section-title em {
-      background: linear-gradient(90deg, #B06838, #C8962A, #7A6A50);
+      background: linear-gradient(90deg, #C07848, #C8962A, #22A070);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    .strategy-flow { display: grid; grid-template-columns: repeat(4,1fr); margin-top: 4rem; position: relative; }
-
-    .strategy-flow::before {
-      content: ''; position: absolute; top: 2.5rem; left: 12.5%; right: 12.5%; height: 1px;
-      background: linear-gradient(to right, #B06838, #7A6A50, #1F9268, #3A7A9A);
-      opacity: 0.5;
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 0; margin-top: 5rem; position: relative;
     }
 
-    .flow-step { padding: 0 2rem 2rem; text-align: center; position: relative; }
+    .steps-connector {
+      position: absolute; top: 44px; left: 12.5%; right: 12.5%; height: 1px;
+      background: linear-gradient(to right, var(--copper), var(--gold), var(--emerald-light), var(--diamond));
+      opacity: 0.35;
+    }
 
-    .flow-num {
-      width: 5rem; height: 5rem; border: 1px solid var(--border); border-radius: 50%;
+    .step {
+      padding: 0 2.5rem 3rem; text-align: center; position: relative;
+    }
+
+    .step-num {
+      width: 88px; height: 88px; border-radius: 50%;
+      border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.5rem;
-      font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
-      background: var(--bg); position: relative; z-index: 1;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      margin: 0 auto 2rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300;
+      background: var(--bg2); position: relative; z-index: 1;
+      transition: border-color 0.35s, box-shadow 0.35s;
     }
 
-    .flow-step:nth-child(1) .flow-num { color: #B06838; }
-    .flow-step:nth-child(2) .flow-num { color: #5A6A7A; }
-    .flow-step:nth-child(3) .flow-num { color: #1A6E4E; }
-    .flow-step:nth-child(4) .flow-num { color: #3A7A9A; }
+    .step:nth-child(1) .step-num { color: var(--copper); }
+    .step:nth-child(2) .step-num { color: var(--gold); }
+    .step:nth-child(3) .step-num { color: var(--emerald-light); }
+    .step:nth-child(4) .step-num { color: var(--diamond); }
 
-    .flow-step:nth-child(1):hover .flow-num { border-color: var(--copper); box-shadow: 0 0 20px rgba(192,120,72,0.18); }
-    .flow-step:nth-child(2):hover .flow-num { border-color: var(--silver); box-shadow: 0 0 20px rgba(154,175,194,0.15); }
-    .flow-step:nth-child(3):hover .flow-num { border-color: var(--emerald); box-shadow: 0 0 20px rgba(28,122,88,0.18); }
-    .flow-step:nth-child(4):hover .flow-num { border-color: var(--diamond); box-shadow: 0 0 20px rgba(194,220,240,0.12); }
+    .step:nth-child(1):hover .step-num { border-color: var(--copper); box-shadow: 0 0 28px rgba(192,120,72,0.22); }
+    .step:nth-child(2):hover .step-num { border-color: var(--gold); box-shadow: 0 0 28px rgba(200,150,42,0.20); }
+    .step:nth-child(3):hover .step-num { border-color: var(--emerald-light); box-shadow: 0 0 28px rgba(34,160,112,0.22); }
+    .step:nth-child(4):hover .step-num { border-color: var(--diamond); box-shadow: 0 0 28px rgba(90,138,170,0.20); }
 
-    .flow-step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
-    .flow-step p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.7; }
+    .step h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
+    .step p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.8; }
 
-    #ventures { background: var(--bg2); border-top: 1px solid var(--border-em); border-bottom: 1px solid var(--border-em); }
+    /* ── VENTURES ── */
+    #ventures {
+      background: var(--bg);
+      border-top: 1px solid var(--border-em);
+    }
 
     #ventures .section-title em {
-      background: linear-gradient(90deg, #1A6E4E, #5A6A7A);
+      background: linear-gradient(90deg, #22A070, #5A8AAA, #C07848);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    .ventures-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 4rem; }
+    .ventures-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 5rem; }
 
     .venture-card {
-      padding: 2.5rem; background: var(--bg3); border: 1px solid var(--border);
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      padding: 3rem 2.5rem; background: var(--bg3); border: 1px solid var(--border);
       position: relative; overflow: hidden;
+      transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+      transform-style: preserve-3d;
+      cursor: default;
     }
 
-    .venture-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+    .venture-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 70%);
       opacity: 0; transition: opacity 0.3s;
     }
 
-    .venture-card:nth-child(1)::after { background: linear-gradient(90deg, var(--copper), var(--copper-light)); }
-    .venture-card:nth-child(2)::after { background: linear-gradient(90deg, var(--silver), var(--platinum-light)); }
-    .venture-card:nth-child(3)::after { background: linear-gradient(90deg, var(--emerald), var(--emerald-light)); }
+    .venture-card:hover::before { opacity: 1; }
 
-    .venture-card:hover { transform: translateY(-5px); border-color: var(--border-em); box-shadow: 0 24px 60px rgba(28,122,88,0.10); }
-    .venture-card:hover::after { opacity: 1; }
-
-    .venture-icon { font-size: 2rem; margin-bottom: 1.25rem; }
-
-    .venture-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; }
-    .venture-card:nth-child(1) h4 { color: #B06838; }
-    .venture-card:nth-child(2) h4 { color: #4A5A6A; }
-    .venture-card:nth-child(3) h4 { color: #1A6E4E; }
-
-    .venture-card p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.75; }
-
-    .venture-tag {
-      display: inline-block; margin-top: 1.25rem;
-      font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
-      padding: 0.3rem 0.75rem; border: 1px solid var(--border-em); color: var(--emerald-light);
+    .venture-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+      transform: scaleX(0); transition: transform 0.4s; transform-origin: left;
     }
 
-    #disclaimer { background: var(--bg3); border-top: 1px solid var(--border); padding: 3rem 4rem; }
+    .venture-card:nth-child(1)::after { background: linear-gradient(90deg, var(--copper), var(--gold)); }
+    .venture-card:nth-child(2)::after { background: linear-gradient(90deg, var(--emerald), var(--emerald-light)); }
+    .venture-card:nth-child(3)::after { background: linear-gradient(90deg, var(--diamond), #8ABACC); }
 
-    .disclaimer-box { max-width: 800px; margin: 0 auto; text-align: center; }
+    .venture-card:hover { transform: translateY(-6px); box-shadow: 0 32px 80px rgba(0,0,0,0.4); border-color: var(--border-em); }
+    .venture-card:hover::after { transform: scaleX(1); }
 
-    .disclaimer-box p {
-      font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.04em;
-      color: var(--text-dim); line-height: 1.9;
+    .venture-icon-wrap {
+      width: 60px; height: 60px; margin-bottom: 1.75rem;
+      border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+      position: relative;
     }
 
-    .disclaimer-box strong { color: #4A5A6A; font-weight: 400; }
+    .venture-card:nth-child(1) .venture-icon-wrap { border-color: var(--border-cu); }
+    .venture-card:nth-child(2) .venture-icon-wrap { border-color: var(--border-em); }
+    .venture-card:nth-child(3) .venture-icon-wrap { border-color: var(--diamond-dim); }
 
-    #contact { background: var(--bg); text-align: center; padding: 8rem 4rem; }
-    #contact .section-label { justify-content: center; }
-    #contact .section-label::after { display: none; }
-    #contact .section-title { max-width: 600px; margin: 0 auto 1.5rem; }
+    .venture-icon-wrap svg { width: 28px; height: 28px; }
 
-    #contact .section-title em {
-      background: linear-gradient(90deg, #B06838, #3A7A9A);
+    .venture-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 600; margin-bottom: 0.75rem;
+    }
+
+    .venture-card:nth-child(1) h4 { color: var(--copper-light); }
+    .venture-card:nth-child(2) h4 { color: var(--emerald-light); }
+    .venture-card:nth-child(3) h4 { color: var(--diamond); }
+
+    .venture-card p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.85; margin-bottom: 1.5rem; }
+
+    .venture-metric {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em;
+      color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 1.25rem;
+    }
+
+    .venture-metric strong { color: var(--text-dim); font-weight: 400; }
+
+    /* ── EDUCATION ── */
+    #education {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+
+    #education .section-title em {
+      background: linear-gradient(90deg, #C8962A, #C07848);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    #contact p { color: var(--text-dim); max-width: 500px; margin: 0 auto 3rem; }
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 4rem; }
 
-    .contact-link {
-      display: inline-flex; align-items: center; gap: 0.75rem;
-      font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--bg); text-decoration: none; padding: 1.1rem 2.5rem;
-      background: linear-gradient(110deg, var(--emerald) 0%, var(--emerald-light) 50%, var(--silver-mid) 100%);
-      transition: opacity 0.25s, transform 0.2s;
+    .edu-text p { color: var(--text-dim); font-size: 1.05rem; line-height: 1.95; margin-bottom: 1.5rem; }
+    .edu-text p strong { color: var(--text); font-weight: 500; }
+
+    .edu-modules { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+
+    .edu-module {
+      background: var(--bg3); padding: 1.75rem;
+      transition: background 0.3s;
     }
 
-    .contact-link:hover { opacity: 0.88; transform: translateY(-2px); }
+    .edu-module:hover { background: var(--bg4); }
 
+    .edu-module-num {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em;
+      color: var(--gold); margin-bottom: 0.75rem;
+    }
+
+    .edu-module h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem;
+    }
+
+    .edu-module p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.7; }
+
+    /* ── DISCLAIMER ── */
+    #disclaimer {
+      background: var(--bg3); border-top: 1px solid var(--border);
+      padding: 3.5rem 4rem;
+    }
+
+    .disclaimer-box { max-width: 780px; margin: 0 auto; text-align: center; }
+
+    .disclaimer-box p {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.04em;
+      color: var(--text-muted); line-height: 2;
+    }
+
+    .disclaimer-box strong { color: var(--text-dim); font-weight: 400; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); text-align: center; padding: 9rem 4rem; }
+    #contact .section-label { justify-content: center; }
+    #contact .section-label::before { display: none; }
+    #contact .section-title { max-width: 640px; margin: 0 auto 1.5rem; }
+
+    #contact .section-title em {
+      background: linear-gradient(90deg, #C07848, #C8962A, #22A070);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    #contact > p { color: var(--text-dim); max-width: 480px; margin: 0 auto 3rem; font-size: 1rem; }
+
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--bg); text-decoration: none; padding: 1.15rem 2.75rem;
+      background: linear-gradient(110deg, var(--emerald) 0%, var(--emerald-light) 50%, var(--diamond) 100%);
+      background-size: 200%; background-position: 0%;
+      transition: background-position 0.5s, transform 0.2s;
+    }
+
+    .contact-email:hover { background-position: 100%; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--border-em); padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 4rem;
       display: flex; justify-content: space-between; align-items: center;
       background: var(--bg2);
     }
 
-    footer .logo {
+    .footer-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      font-size: 1.1rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      background: linear-gradient(110deg, #C07848, #C8962A, #22A070);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    footer p { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--text-dim); }
+    footer p { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: var(--text-muted); }
 
+    .footer-right { display: flex; align-items: center; gap: 2rem; }
+
+    .x-link {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em;
+      color: var(--text-muted); text-decoration: none; transition: color 0.25s;
+    }
+
+    .x-link:hover { color: var(--emerald-light); }
+
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
+      from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+    /* ── COUNTER ── */
+    .counter-wrap {
+      display: inline-block;
+    }
 
     /* ── HAMBURGER ── */
     .nav-toggle {
-      display: none;
-      flex-direction: column; justify-content: center; gap: 5px;
+      display: none; flex-direction: column; justify-content: center; gap: 5px;
       width: 32px; height: 32px; cursor: pointer;
       background: none; border: none; padding: 0; z-index: 200;
     }
 
-    .nav-toggle span {
-      display: block; width: 100%; height: 1px;
-      background: var(--text); transition: transform 0.3s, opacity 0.3s;
-    }
-
-    /* pearl surface shimmer on hero */
-    #hero::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 120% 80% at 50% 0%,
-        rgba(255,252,248,0.6) 0%, rgba(240,232,220,0.2) 50%, transparent 100%);
-      pointer-events: none;
-    }
-
+    .nav-toggle span { display: block; width: 100%; height: 1px; background: var(--text-dim); transition: transform 0.3s, opacity 0.3s; }
     .nav-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
     .mobile-menu {
-      display: none;
-      position: fixed; top: 64px; left: 0; right: 0;
-      background: rgba(247,243,238,0.98);
-      backdrop-filter: blur(16px);
+      display: none; position: fixed; top: 64px; left: 0; right: 0;
+      background: rgba(13,15,14,0.97); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-em);
-      padding: 2rem 1.5rem;
-      flex-direction: column; gap: 0;
-      z-index: 99;
-      transform: translateY(-10px); opacity: 0;
-      transition: transform 0.3s, opacity 0.3s;
+      padding: 2rem 1.5rem; flex-direction: column; gap: 0; z-index: 99;
+      transform: translateY(-10px); opacity: 0; transition: transform 0.3s, opacity 0.3s;
     }
 
-    .mobile-menu.open {
-      transform: translateY(0); opacity: 1;
-    }
+    .mobile-menu.open { transform: translateY(0); opacity: 1; }
 
     .mobile-menu a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--text-dim); text-decoration: none;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border);
-      transition: color 0.2s;
+      font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-dim); text-decoration: none; padding: 1rem 0;
+      border-bottom: 1px solid var(--border); transition: color 0.2s;
     }
 
     .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu a:hover { color: var(--emerald-light); }
 
-    @media (max-width: 768px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
       nav { padding: 1.25rem 1.5rem; }
+      nav.scrolled { padding: 0.9rem 1.5rem; }
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
       .mobile-menu { display: flex; }
-      section { padding: 4rem 1.5rem; }
-      #hero { padding: 8rem 1.5rem 4rem; }
-      .hero-orb { display: none; }
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .strategy-flow { grid-template-columns: 1fr 1fr; }
-      .strategy-flow::before { display: none; }
+      section, #hero, #flow, #contact, #disclaimer { padding: 5rem 1.5rem; }
+      #hero { padding: 8rem 1.5rem 5rem; }
+      .about-grid, .edu-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .steps-connector { display: none; }
       .ventures-grid { grid-template-columns: 1fr; }
-      .hero-stat-row { gap: 2rem; flex-wrap: wrap; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
-      #disclaimer { padding: 3rem 1.5rem; }
+      .hero-stats { gap: 2rem; flex-wrap: wrap; }
+      .edu-modules { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1.25rem; text-align: center; }
+      .footer-right { flex-direction: column; gap: 0.75rem; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#hero" class="nav-logo grad-logo">Colden Capital</a>
+  <nav id="mainNav">
+    <a href="#hero" class="nav-logo">Colden Capital</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#flow">Capital Flow</a></li>
       <li><a href="#strategy">Strategy</a></li>
       <li><a href="#ventures">Ventures</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <button class="nav-toggle" aria-label="Toggle menu">
@@ -498,123 +570,465 @@
 
   <nav class="mobile-menu" id="mobileMenu">
     <a href="#about">About</a>
+    <a href="#flow">Capital Flow</a>
     <a href="#strategy">Strategy</a>
     <a href="#ventures">Ventures</a>
+    <a href="#education">Education</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- ── HERO ── -->
   <section id="hero">
-    <div class="hero-bg-line"></div>
-    <div class="hero-bg-line"></div>
-    <div class="hero-orb"></div>
-
-    <p class="hero-tag">Family-Owned · Fort Mill, South Carolina</p>
-    <h1 class="hero-title">
-      Colden<br />
-      <em class="grad-logo">Capital</em>
-    </h1>
-    <p class="hero-sub">
-      A private family enterprise that leverages market vehicles to create real-world business and investment opportunities — turning options positions into lasting assets.
-    </p>
-    <a href="#strategy" class="hero-cta">
-      <span>Our Strategy</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-
-    <div class="hero-stat-row">
-      <div class="hero-stat"><strong>LEAPs</strong><span>Primary Vehicle</span></div>
-      <div class="hero-stat"><strong>Assets</strong><span>Target Outcome</span></div>
-      <div class="hero-stat"><strong>Family</strong><span>Ownership Structure</span></div>
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-tag">Family Enterprise · Fort Mill, South Carolina</p>
+      <h1 class="hero-title">
+        Colden<br />
+        <em>Capital</em>
+      </h1>
+      <p class="hero-sub">
+        A private family office that converts financial education and disciplined options trading into real-world assets — dump trucks, commercial real estate, and income-producing businesses.
+      </p>
+      <div class="hero-btns">
+        <a href="#flow" class="btn-primary">
+          <span>See the Capital Flow</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#ventures" class="btn-ghost">Our Ventures</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <strong><span class="counter" data-target="4" data-suffix="">4</span></strong>
+          <span>Income Verticals</span>
+        </div>
+        <div class="hero-stat">
+          <strong>LEAPs</strong>
+          <span>Primary Vehicle</span>
+        </div>
+        <div class="hero-stat">
+          <strong>Family</strong>
+          <span>Owned &amp; Operated</span>
+        </div>
+        <div class="hero-stat">
+          <strong>$3–6K</strong>
+          <span>Per Asset / Month</span>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- ── ABOUT ── -->
   <section id="about">
     <div class="section-label">Who We Are</div>
-    <h2 class="section-title">Not a fund.<br /><em>A family enterprise.</em></h2>
+    <h2 class="section-title reveal">Not a fund.<br /><em>A family enterprise.</em></h2>
     <div class="about-grid">
-      <div class="about-text reveal">
+      <div class="about-text reveal-left">
         <p>Colden Capital is a <strong>family-owned private enterprise</strong> based in Fort Mill, South Carolina. We are not a registered investment advisor, broker-dealer, or financial institution of any kind.</p>
-        <p>We use the stock market and its instruments — primarily options and long-dated equity contracts — as a <strong>capital generation engine</strong> to fund tangible small business acquisitions and income-producing assets.</p>
-        <p>Our model is simple: <strong>disciplined market entries fund real-world opportunities</strong>. The goal is not to trade indefinitely — it's to build a portfolio of businesses and assets that generate lasting cash flow for the family.</p>
-        <p>From service businesses to equipment leasing to commercial real estate, every market position we take is a step toward something you can touch.</p>
+        <p>We treat the market as a <strong>capital engine</strong> — using options, long-dated equity contracts (LEAPs), and disciplined short and long-term trades to generate the capital that funds tangible asset acquisitions.</p>
+        <p>Our model bridges two worlds: the precision of financial markets and the stability of Main Street assets. Every position taken in the market has a real-world target — a dump truck, a commercial property, an apartment building — something you can touch and that generates lasting cash flow.</p>
+        <p>From <strong>finance education</strong> that funds the first trade, to that trade funding the first asset, to that asset funding the next position — the flywheel turns and compounds for the family.</p>
       </div>
-      <div class="about-values reveal">
-        <div class="value-card"><h4>Discipline First</h4><p>Every entry is rule-based and systematic. We don't chase — we wait for our criteria to align before deploying capital.</p></div>
-        <div class="value-card"><h4>Market to Main Street</h4><p>Profits from market positions are redeployed into brick-and-mortar assets: laundromats, equipment, leasing, and service businesses.</p></div>
-        <div class="value-card"><h4>Generational Thinking</h4><p>Every decision is made with the next generation in mind. We build infrastructure, not just portfolios.</p></div>
+      <div class="about-pillars reveal-right">
+        <div class="pillar">
+          <div class="pillar-bar"></div>
+          <h4>Discipline First</h4>
+          <p>Every entry is rule-based and systematic. We don't chase — we wait for our criteria to align before deploying capital into the market.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-bar"></div>
+          <h4>Market to Main Street</h4>
+          <p>Profits from options positions are redeployed into brick-and-mortar assets: equipment, commercial real estate, and service businesses that generate monthly income.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-bar"></div>
+          <h4>Generational Thinking</h4>
+          <p>Every decision is made with the next generation in mind. We build infrastructure and ownership — not just portfolios or trading accounts.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ── CAPITAL FLOW ── -->
+  <section id="flow">
+    <div class="section-label">The Model</div>
+    <h2 class="section-title reveal">Capital <em>Flow</em></h2>
+    <p class="reveal" style="color:var(--text-dim);max-width:580px;margin-bottom:1rem;">
+      Finance education generates the first capital. That capital enters the market as disciplined trades. Market gains deploy into real, income-producing assets. Asset cash flow re-enters the engine.
+    </p>
+    <div class="flow-diagram">
+      <div class="flow-svg-wrap reveal">
+        <svg id="flow-svg" viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;overflow:visible;">
+          <defs>
+            <linearGradient id="grad-cu" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#C07848"/>
+              <stop offset="100%" style="stop-color:#C8962A"/>
+            </linearGradient>
+            <linearGradient id="grad-em" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#C8962A"/>
+              <stop offset="100%" style="stop-color:#22A070"/>
+            </linearGradient>
+            <linearGradient id="grad-di" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#22A070"/>
+              <stop offset="100%" style="stop-color:#5A8AAA"/>
+            </linearGradient>
+            <linearGradient id="grad-loop" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#5A8AAA"/>
+              <stop offset="100%" style="stop-color:#C07848"/>
+            </linearGradient>
+            <marker id="arr-cu" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#C8962A"/>
+            </marker>
+            <marker id="arr-em" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#22A070"/>
+            </marker>
+            <marker id="arr-di" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#5A8AAA"/>
+            </marker>
+            <marker id="arr-loop" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#C07848"/>
+            </marker>
+            <filter id="glow-cu">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <filter id="glow-em">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- NODE 1: Finance Education -->
+          <g transform="translate(80,170)">
+            <rect x="-72" y="-52" width="144" height="104" rx="4" fill="#1C1F1E" stroke="#C07848" stroke-width="1" opacity="0.9"/>
+            <text y="-18" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="2" fill="#C07848" text-transform="uppercase">EDUCATION</text>
+            <text y="0" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-weight="600" fill="#EDE8E1">Finance</text>
+            <text y="20" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-weight="300" font-style="italic" fill="#EDE8E1">Literacy</text>
+            <text y="42" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#8A8078">Seed Capital</text>
+          </g>
+
+          <!-- ARROW 1→2 -->
+          <line id="arrow1" x1="156" y1="170" x2="264" y2="170" stroke="url(#grad-cu)" stroke-width="1.5" marker-end="url(#arr-cu)" opacity="0.7"/>
+          <text x="210" y="158" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#C8962A" letter-spacing="1">DEPLOYS →</text>
+
+          <!-- NODE 2: Trading -->
+          <g transform="translate(340,170)">
+            <rect x="-72" y="-64" width="144" height="128" rx="4" fill="#1C1F1E" stroke="#C8962A" stroke-width="1" opacity="0.9"/>
+            <text y="-30" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="2" fill="#C8962A">MARKET</text>
+            <text y="-10" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-weight="600" fill="#EDE8E1">Options</text>
+            <text y="12" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" font-weight="300" fill="#8A8078">LEAPs · PUTs · CALLs</text>
+            <text y="30" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="13" font-weight="300" fill="#8A8078">Short &amp; Long-Term</text>
+            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#C8962A">Defined Risk · High Conviction</text>
+          </g>
+
+          <!-- ARROW 2→3 -->
+          <line id="arrow2" x1="416" y1="170" x2="524" y2="170" stroke="url(#grad-em)" stroke-width="1.5" marker-end="url(#arr-em)" opacity="0.7"/>
+          <text x="470" y="158" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#22A070" letter-spacing="1">CONVERTS →</text>
+
+          <!-- NODE 3: Real Assets -->
+          <g transform="translate(600,170)">
+            <rect x="-72" y="-64" width="144" height="128" rx="4" fill="#1C1F1E" stroke="#22A070" stroke-width="1" opacity="0.9"/>
+            <text y="-30" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="2" fill="#22A070">REAL ASSETS</text>
+            <text y="-10" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="18" font-weight="600" fill="#EDE8E1">Dump Trucks</text>
+            <text y="10" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" font-weight="300" fill="#8A8078">Commercial RE</text>
+            <text y="28" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" font-weight="300" fill="#8A8078">Apartments</text>
+            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#22A070">$3–6K / mo per unit</text>
+          </g>
+
+          <!-- ARROW 3→4 -->
+          <line id="arrow3" x1="676" y1="170" x2="784" y2="170" stroke="url(#grad-di)" stroke-width="1.5" marker-end="url(#arr-di)" opacity="0.7"/>
+          <text x="730" y="158" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#5A8AAA" letter-spacing="1">GENERATES →</text>
+
+          <!-- NODE 4: Cash Flow -->
+          <g transform="translate(860,170)">
+            <rect x="-72" y="-52" width="144" height="104" rx="4" fill="#1C1F1E" stroke="#5A8AAA" stroke-width="1" opacity="0.9"/>
+            <text y="-18" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="2" fill="#5A8AAA">OUTPUT</text>
+            <text y="4" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-weight="600" fill="#EDE8E1">Cash Flow</text>
+            <text y="24" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" font-weight="300" font-style="italic" fill="#8A8078">Monthly Income</text>
+            <text y="42" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#5A8AAA">Reinvest · Distribute</text>
+          </g>
+
+          <!-- LOOP ARROW: Cash Flow back to Trading (curved below) -->
+          <path id="loop-path" d="M 860 222 Q 860 340 480 340 Q 100 340 80 222" stroke="url(#grad-loop)" stroke-width="1" fill="none" marker-end="url(#arr-loop)" stroke-dasharray="6,4" opacity="0.45"/>
+          <text x="480" y="368" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#4A4540" letter-spacing="2">CASH FLOW REINVESTED → NEXT POSITION</text>
+
+          <!-- Animated dot on arrow1 -->
+          <circle r="4" fill="#C8962A" filter="url(#glow-cu)" opacity="0.9">
+            <animateMotion dur="2.5s" repeatCount="indefinite">
+              <mpath href="#dummy-path1"/>
+            </animateMotion>
+          </circle>
+
+          <!-- Animated dots on arrows -->
+          <circle r="4" fill="#C8962A" opacity="0.9" filter="url(#glow-cu)">
+            <animateMotion dur="2.5s" repeatCount="indefinite" begin="0s">
+              <mpath xlink:href="#ap1"/>
+            </animateMotion>
+          </circle>
+          <circle r="4" fill="#22A070" opacity="0.9" filter="url(#glow-em)">
+            <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.8s">
+              <mpath xlink:href="#ap2"/>
+            </animateMotion>
+          </circle>
+          <circle r="4" fill="#5A8AAA" opacity="0.9">
+            <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.6s">
+              <mpath xlink:href="#ap3"/>
+            </animateMotion>
+          </circle>
+          <circle r="3" fill="#C07848" opacity="0.6">
+            <animateMotion dur="6s" repeatCount="indefinite" begin="0s">
+              <mpath xlink:href="#ap-loop"/>
+            </animateMotion>
+          </circle>
+
+          <!-- Motion paths (invisible) -->
+          <path id="ap1" d="M156,170 L268,170" fill="none" stroke="none"/>
+          <path id="ap2" d="M416,170 L528,170" fill="none" stroke="none"/>
+          <path id="ap3" d="M676,170 L788,170" fill="none" stroke="none"/>
+          <path id="ap-loop" d="M 860 222 Q 860 340 480 340 Q 100 340 80 222" fill="none" stroke="none"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRATEGY ── -->
   <section id="strategy">
     <div class="section-label">How It Works</div>
-    <h2 class="section-title">The <em>Flywheel</em></h2>
-    <div class="strategy-flow">
-      <div class="flow-step reveal"><div class="flow-num">I</div><h4>Market Entry</h4><p>Identify high-conviction setups using technical analysis, macro catalysts, and systematic criteria. Enter via long-dated options (LEAPs) with defined risk.</p></div>
-      <div class="flow-step reveal"><div class="flow-num">II</div><h4>Capital Growth</h4><p>Options leverage amplifies returns on correctly timed positions. Gains are tracked against asset acquisition targets.</p></div>
-      <div class="flow-step reveal"><div class="flow-num">III</div><h4>Asset Acquisition</h4><p>Profits are deployed into income-producing assets — laundromats, dump trucks, equipment — that generate reliable monthly cash flow.</p></div>
-      <div class="flow-step reveal"><div class="flow-num">IV</div><h4>Reinvestment</h4><p>Asset cash flow funds the next market position. The flywheel compounds over time, building equity across multiple verticals.</p></div>
+    <h2 class="section-title reveal">The <em>Flywheel</em></h2>
+    <div class="steps-grid">
+      <div class="steps-connector"></div>
+      <div class="step reveal">
+        <div class="step-num">I</div>
+        <h4>Finance Education</h4>
+        <p>Knowledge generates the first capital. We teach options mechanics, risk management, and market structure — funding the initial account and building the discipline to trade it correctly.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">II</div>
+        <h4>Market Entry</h4>
+        <p>High-conviction setups identified via technical analysis and macro catalysts. Capital deployed via LEAPs, PUTs, and short-term positions with defined risk and asymmetric upside.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">III</div>
+        <h4>Asset Acquisition</h4>
+        <p>Gains convert into real assets — dump trucks, commercial real estate, apartment units. Physical, income-producing holdings that generate $3–6K per month per unit.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">IV</div>
+        <h4>Reinvestment Loop</h4>
+        <p>Asset cash flow funds the next market position. The flywheel compounds — each turn building equity across multiple verticals and reducing dependence on any single income source.</p>
+      </div>
     </div>
   </section>
 
+  <!-- ── VENTURES ── -->
   <section id="ventures">
     <div class="section-label">Venture Targets</div>
-    <h2 class="section-title">Where the<br /><em>Capital Goes</em></h2>
+    <h2 class="section-title reveal">Where the<br /><em>Capital Goes</em></h2>
     <div class="ventures-grid">
-      <div class="venture-card reveal"><div class="venture-icon">🏢</div><h4>Service Businesses</h4><p>Self-service laundromats, cleaning services, and other recession-resistant businesses with predictable, recurring revenue and low overhead.</p><span class="venture-tag">Cash Flow</span></div>
-      <div class="venture-card reveal"><div class="venture-icon">🚛</div><h4>Equipment Leasing</h4><p>Commercial equipment — dump trucks, skid steers, trailers — leased to operators. Physical assets that generate $3–6K/month per unit.</p><span class="venture-tag">Passive Income</span></div>
-      <div class="venture-card reveal"><div class="venture-icon">🏗️</div><h4>Commercial Real Estate</h4><p>Small commercial properties and storage facilities in the greater Fort Mill / Charlotte corridor as long-term appreciating holdings.</p><span class="venture-tag">Long-Term Hold</span></div>
+
+      <div class="venture-card reveal">
+        <div class="venture-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C07848" stroke-width="1.5">
+            <path d="M1 17V9l6-6h10l6 6v8M1 17h22M8 17v-4h8v4"/>
+            <circle cx="5.5" cy="17.5" r="1.5"/><circle cx="18.5" cy="17.5" r="1.5"/>
+          </svg>
+        </div>
+        <h4>Dump Trucks &amp; Equipment</h4>
+        <p>Commercial dump trucks and heavy equipment leased to contractors and operators. Physical assets with strong daily demand in construction and infrastructure markets.</p>
+        <div class="venture-metric">
+          <strong>$3,000 – $6,000</strong> / unit / month · Low management overhead · Recession-resilient demand
+        </div>
+      </div>
+
+      <div class="venture-card reveal">
+        <div class="venture-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#22A070" stroke-width="1.5">
+            <rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M2 9h20M2 15h6"/>
+          </svg>
+        </div>
+        <h4>Commercial Real Estate</h4>
+        <p>Small commercial properties, storage facilities, and mixed-use buildings in the Fort Mill / Charlotte corridor. Long-term hold strategy for appreciation and steady rental income.</p>
+        <div class="venture-metric">
+          <strong>Long-term hold</strong> · Charlotte MSA growth market · Appreciation + rent income
+        </div>
+      </div>
+
+      <div class="venture-card reveal">
+        <div class="venture-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5A8AAA" stroke-width="1.5">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h4>Apartment Buildings</h4>
+        <p>Multifamily residential units targeting workforce housing in high-growth Southeast markets. Stable occupancy, predictable income, and long-term equity build through principal paydown.</p>
+        <div class="venture-metric">
+          <strong>Multifamily</strong> · Workforce housing · Stable occupancy · Equity build
+        </div>
+      </div>
+
     </div>
   </section>
 
+  <!-- ── EDUCATION ── -->
+  <section id="education">
+    <div class="section-label">The Foundation</div>
+    <h2 class="section-title reveal">Finance <em>Education</em></h2>
+    <div class="edu-grid">
+      <div class="edu-text reveal-left">
+        <p>The capital flow starts with knowledge. <strong>Colden Capital's education arm</strong> teaches the mechanics of options trading, risk management, and market structure — converting information into actionable, repeatable strategy.</p>
+        <p>Finance literacy isn't just the seed capital for our first trade. It's the ongoing fuel that compounds the entire model. Every student who learns our system potentially becomes a client, partner, or participant in the next asset acquisition.</p>
+        <p><strong>Education generates capital. Capital generates assets. Assets generate income. Income generates legacy.</strong></p>
+      </div>
+      <div class="edu-modules reveal-right">
+        <div class="edu-module">
+          <div class="edu-module-num">01 · FOUNDATION</div>
+          <h5>Options Mechanics</h5>
+          <p>LEAPs, PUTs, CALLs — how options work, how to price risk, and how leverage amplifies both gains and losses.</p>
+        </div>
+        <div class="edu-module">
+          <div class="edu-module-num">02 · ENTRY</div>
+          <h5>Market Reads</h5>
+          <p>Technical setups, macro catalysts, and the systematic criteria that define a high-conviction entry.</p>
+        </div>
+        <div class="edu-module">
+          <div class="edu-module-num">03 · CAPITAL</div>
+          <h5>Risk Management</h5>
+          <p>Position sizing, stop discipline, and account management — protecting capital so it stays in the game.</p>
+        </div>
+        <div class="edu-module">
+          <div class="edu-module-num">04 · ASSETS</div>
+          <h5>From Market to Brick</h5>
+          <p>How market gains convert into real assets — the bridge from trading to tangible ownership and cash flow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DISCLAIMER ── -->
   <section id="disclaimer">
     <div class="disclaimer-box">
       <p><strong>Important Notice —</strong> Colden Capital is a private family enterprise and is <strong>not a registered investment advisor, broker-dealer, financial institution, or investment fund</strong> of any kind. Nothing on this website constitutes financial advice, an offer to sell securities, or a solicitation of investment. All market activity described reflects the private strategies of the Colden family. Past performance is not indicative of future results. All investments involve risk, including loss of principal.</p>
     </div>
   </section>
 
+  <!-- ── CONTACT ── -->
   <section id="contact">
     <div class="section-label">Get In Touch</div>
-    <h2 class="section-title">Let's <em>Connect</em></h2>
-    <p>Interested in partnerships, joint ventures, or learning more about how Colden Capital builds wealth through market and business opportunities? Reach out directly.</p>
-    <a href="mailto:coldencapital.llc@gmail.com" class="contact-link">coldencapital.llc@gmail.com</a>
+    <h2 class="section-title reveal">Let's <em>Build Together</em></h2>
+    <p>Interested in joint ventures, asset partnerships, or learning how Colden Capital converts market discipline into real-world ownership? Reach out directly.</p>
+    <a href="mailto:coldencapital.llc@gmail.com" class="contact-email">coldencapital.llc@gmail.com</a>
   </section>
 
   <footer>
-    <span class="logo grad-logo">Colden Capital</span>
-    <p>© 2026 Colden Capital. Fort Mill, South Carolina. All rights reserved.</p>
-    <div style="display:flex; align-items:center; gap:1.5rem;">
+    <span class="footer-logo">Colden Capital</span>
+    <p>© 2026 Colden Capital · Fort Mill, South Carolina · All rights reserved.</p>
+    <div class="footer-right">
       <p>Private Family Enterprise · Not a Financial Institution</p>
-      <a href="https://x.com/COLDENCAPITAL" target="_blank" rel="noopener noreferrer"
-         style="display:inline-flex; align-items:center; gap:0.4rem; font-family:'DM Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; color:#4A5A6A; text-decoration:none; transition:color 0.2s;"
-         onmouseover="this.style.color='#1A6E4E'" onmouseout="this.style.color='#4A5A6A'">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <a href="https://x.com/COLDENCAPITAL" target="_blank" rel="noopener noreferrer" class="x-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         @COLDENCAPITAL
       </a>
     </div>
   </footer>
 
   <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 120);
-      });
-    }, { threshold: 0.08 });
-    reveals.forEach(el => observer.observe(el));
+    /* ── NAV SCROLL ── */
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
 
+    /* ── MOBILE MENU ── */
     const toggle = document.querySelector('.nav-toggle');
     const mobileMenu = document.getElementById('mobileMenu');
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('open');
       mobileMenu.classList.toggle('open');
     });
-    mobileMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        toggle.classList.remove('open');
-        mobileMenu.classList.remove('open');
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      toggle.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }));
+
+    /* ── REVEAL ON SCROLL ── */
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
       });
-    });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => revealObs.observe(el));
+
+    /* ── HERO PARTICLE CANVAS ── */
+    (function() {
+      const canvas = document.getElementById('hero-canvas');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles, animId;
+
+      const COLORS = ['rgba(192,120,72,', 'rgba(200,150,42,', 'rgba(34,160,112,', 'rgba(90,138,170,'];
+
+      function resize() {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+        init();
+      }
+
+      function rand(a, b) { return a + Math.random() * (b - a); }
+
+      function init() {
+        particles = [];
+        const count = Math.floor((W * H) / 14000);
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: rand(0, W), y: rand(0, H),
+            vx: rand(-0.15, 0.15), vy: rand(-0.2, -0.05),
+            r: rand(1, 2.5),
+            alpha: rand(0.15, 0.55),
+            color: COLORS[Math.floor(rand(0, COLORS.length))],
+          });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(192,120,72,${0.04 * (1 - dist / 120)})`;
+              ctx.lineWidth = 0.5;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = p.color + p.alpha + ')';
+          ctx.fill();
+
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.y < -10) { p.y = H + 10; p.x = rand(0, W); }
+          if (p.x < -10) p.x = W + 10;
+          if (p.x > W + 10) p.x = -10;
+        });
+
+        animId = requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', () => { cancelAnimationFrame(animId); resize(); draw(); });
+      resize();
+      draw();
+    })();
   </script>
 </body>
 </html>
