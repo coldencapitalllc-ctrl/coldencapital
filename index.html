@@ -259,7 +259,24 @@
     }
 
     .flow-svg-wrap {
-      width: 100%; max-width: 960px; margin: 0 auto;
+      width: 100%; max-width: 1100px; margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    /* ── FLOW LEGEND ── */
+    .flow-legend {
+      display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .flow-legend-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em;
+      color: var(--text-muted);
+    }
+
+    .flow-legend-dot {
+      width: 8px; height: 8px; border-radius: 50%;
     }
 
     /* ── STRATEGY STEPS ── */
@@ -652,140 +669,227 @@
   <section id="flow">
     <div class="section-label">The Model</div>
     <h2 class="section-title reveal">Capital <em>Flow</em></h2>
-    <p class="reveal" style="color:var(--text-dim);max-width:580px;margin-bottom:1rem;">
-      Finance education generates the first capital. That capital enters the market as disciplined trades. Market gains deploy into real, income-producing assets. Asset cash flow re-enters the engine.
+    <p class="reveal" style="color:var(--text-dim);max-width:640px;margin-bottom:0.5rem;font-size:1.02rem;line-height:1.9;">
+      Financial literacy and digital asset sales seed the engine. Stock options and futures grow the account. Bank leverage amplifies buying power. Hard assets and franchises convert it all into permanent, compounding cash flow.
     </p>
+
     <div class="flow-diagram">
       <div class="flow-svg-wrap reveal">
-        <svg id="flow-svg" viewBox="0 0 960 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;overflow:visible;">
+        <svg id="flow-svg" viewBox="0 0 1100 680" xmlns="http://www.w3.org/2000/svg" style="width:100%;min-width:700px;">
           <defs>
-            <linearGradient id="grad-cu" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#C07848"/>
-              <stop offset="100%" style="stop-color:#C8962A"/>
-            </linearGradient>
-            <linearGradient id="grad-em" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#C8962A"/>
-              <stop offset="100%" style="stop-color:#22A070"/>
-            </linearGradient>
-            <linearGradient id="grad-di" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style="stop-color:#22A070"/>
-              <stop offset="100%" style="stop-color:#5A8AAA"/>
-            </linearGradient>
-            <linearGradient id="grad-loop" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style="stop-color:#5A8AAA"/>
-              <stop offset="100%" style="stop-color:#C07848"/>
-            </linearGradient>
-            <marker id="arr-cu" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="#C8962A"/>
-            </marker>
-            <marker id="arr-em" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="#22A070"/>
-            </marker>
-            <marker id="arr-di" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="#5A8AAA"/>
-            </marker>
-            <marker id="arr-loop" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="#C07848"/>
-            </marker>
-            <filter id="glow-cu">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <filter id="glow-em">
-              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
+            <!-- gradients for arrows -->
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C07848"/><stop offset="100%" stop-color="#C8962A"/></linearGradient>
+            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#C8962A"/><stop offset="100%" stop-color="#8AA8C8"/></linearGradient>
+            <linearGradient id="g3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8AA8C8"/><stop offset="100%" stop-color="#22A070"/></linearGradient>
+            <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22A070"/><stop offset="100%" stop-color="#5A8AAA"/></linearGradient>
+            <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#22A070"/><stop offset="100%" stop-color="#C8962A"/></linearGradient>
+            <linearGradient id="g-loop" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#5A8AAA"/><stop offset="100%" stop-color="#C07848"/></linearGradient>
+            <!-- glow filters -->
+            <filter id="glow"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="glow-sm"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <!-- arrowheads -->
+            <marker id="arr1" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#C8962A"/></marker>
+            <marker id="arr2" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#8AA8C8"/></marker>
+            <marker id="arr3" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#22A070"/></marker>
+            <marker id="arr4" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#5A8AAA"/></marker>
+            <marker id="arr5" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#C8962A"/></marker>
+            <marker id="arr-lp" markerWidth="7" markerHeight="7" refX="5" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3z" fill="#C07848"/></marker>
           </defs>
 
-          <!-- NODE 1: Finance Education -->
-          <g transform="translate(80,170)">
-            <rect x="-72" y="-52" width="144" height="104" rx="4" fill="#1C1F1E" stroke="#C07848" stroke-width="1" opacity="0.9"/>
-            <text y="-18" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="2" fill="#C07848" text-transform="uppercase">EDUCATION</text>
-            <text y="0" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-weight="600" fill="#EDE8E1">Finance</text>
-            <text y="20" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-weight="300" font-style="italic" fill="#EDE8E1">Literacy</text>
-            <text y="42" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#8A8078">Seed Capital</text>
+          <!-- ═══════════════════════════════════════════
+               ROW 1: top 3 nodes — Education, Market, Bank
+               ═══════════════════════════════════════════ -->
+
+          <!-- NODE 1: Financial Literacy + Digital Assets (x=120, y=140) -->
+          <g transform="translate(120,140)">
+            <rect x="-100" y="-70" width="200" height="140" rx="4" fill="#161918" stroke="#C07848" stroke-width="1.2"/>
+            <rect x="-100" y="-70" width="200" height="3" rx="2" fill="#C07848" opacity="0.7"/>
+            <text y="-40" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2.5" fill="#C07848">STAGE 01</text>
+            <text y="-18" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="700" fill="#EDE8E1">Financial</text>
+            <text y="5" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="300" font-style="italic" fill="#EDE8E1">Literacy</text>
+            <line x1="-40" y1="18" x2="40" y2="18" stroke="#C07848" stroke-width="0.5" opacity="0.4"/>
+            <text y="35" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Digital Asset Creation</text>
+            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Content · Courses · Sales</text>
           </g>
 
-          <!-- ARROW 1→2 -->
-          <line id="arrow1" x1="156" y1="170" x2="264" y2="170" stroke="url(#grad-cu)" stroke-width="1.5" marker-end="url(#arr-cu)" opacity="0.7"/>
-          <text x="210" y="158" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#C8962A" letter-spacing="1">DEPLOYS →</text>
+          <!-- ARROW 1→2 horizontal -->
+          <line x1="222" y1="140" x2="318" y2="140" stroke="url(#g1)" stroke-width="1.5" marker-end="url(#arr1)" opacity="0.8"/>
+          <text x="270" y="128" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#C8962A" letter-spacing="1.5">DEPLOYS</text>
 
-          <!-- NODE 2: Trading -->
-          <g transform="translate(340,170)">
-            <rect x="-72" y="-64" width="144" height="128" rx="4" fill="#1C1F1E" stroke="#C8962A" stroke-width="1" opacity="0.9"/>
-            <text y="-30" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="2" fill="#C8962A">MARKET</text>
-            <text y="-10" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-weight="600" fill="#EDE8E1">Options</text>
-            <text y="12" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" font-weight="300" fill="#8A8078">LEAPs · PUTs · CALLs</text>
-            <text y="30" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="13" font-weight="300" fill="#8A8078">Short &amp; Long-Term</text>
-            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#C8962A">Defined Risk · High Conviction</text>
+          <!-- NODE 2: Stock Market Execution (x=450, y=140) -->
+          <g transform="translate(450,140)">
+            <rect x="-110" y="-75" width="220" height="150" rx="4" fill="#161918" stroke="#C8962A" stroke-width="1.2"/>
+            <rect x="-110" y="-75" width="220" height="3" rx="2" fill="#C8962A" opacity="0.7"/>
+            <text y="-44" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2.5" fill="#C8962A">STAGE 02</text>
+            <text y="-22" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="700" fill="#EDE8E1">Market</text>
+            <text y="2" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="300" font-style="italic" fill="#EDE8E1">Execution</text>
+            <line x1="-50" y1="15" x2="50" y2="15" stroke="#C8962A" stroke-width="0.5" opacity="0.4"/>
+            <text y="32" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Stock Options · Futures</text>
+            <text y="47" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">LEAPs · PUTs · CALLs</text>
+            <text y="62" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#C8962A">Short &amp; Long-Term Vehicles</text>
           </g>
 
-          <!-- ARROW 2→3 -->
-          <line id="arrow2" x1="416" y1="170" x2="524" y2="170" stroke="url(#grad-em)" stroke-width="1.5" marker-end="url(#arr-em)" opacity="0.7"/>
-          <text x="470" y="158" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#22A070" letter-spacing="1">CONVERTS →</text>
+          <!-- ARROW 2→3 horizontal -->
+          <line x1="562" y1="140" x2="658" y2="140" stroke="url(#g2)" stroke-width="1.5" marker-end="url(#arr2)" opacity="0.8"/>
+          <text x="610" y="128" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8AA8C8" letter-spacing="1.5">BUILDS</text>
 
-          <!-- NODE 3: Real Assets -->
-          <g transform="translate(600,170)">
-            <rect x="-72" y="-64" width="144" height="128" rx="4" fill="#1C1F1E" stroke="#22A070" stroke-width="1" opacity="0.9"/>
-            <text y="-30" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="2" fill="#22A070">REAL ASSETS</text>
-            <text y="-10" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="18" font-weight="600" fill="#EDE8E1">Dump Trucks</text>
-            <text y="10" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" font-weight="300" fill="#8A8078">Commercial RE</text>
-            <text y="28" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="15" font-weight="300" fill="#8A8078">Apartments</text>
-            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#22A070">$3–6K / mo per unit</text>
+          <!-- NODE 3: Bank Leverage (x=790, y=140) -->
+          <g transform="translate(790,140)">
+            <rect x="-110" y="-70" width="220" height="140" rx="4" fill="#161918" stroke="#8AA8C8" stroke-width="1.2"/>
+            <rect x="-110" y="-70" width="220" height="3" rx="2" fill="#8AA8C8" opacity="0.7"/>
+            <text y="-40" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2.5" fill="#8AA8C8">STAGE 03</text>
+            <text y="-18" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="700" fill="#EDE8E1">Bank</text>
+            <text y="5" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="21" font-weight="300" font-style="italic" fill="#EDE8E1">Leverage</text>
+            <line x1="-50" y1="18" x2="50" y2="18" stroke="#8AA8C8" stroke-width="0.5" opacity="0.4"/>
+            <text y="35" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Loans vs. Account Value</text>
+            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Portfolio Margin · SBLOCs</text>
           </g>
 
-          <!-- ARROW 3→4 -->
-          <line id="arrow3" x1="676" y1="170" x2="784" y2="170" stroke="url(#grad-di)" stroke-width="1.5" marker-end="url(#arr-di)" opacity="0.7"/>
-          <text x="730" y="158" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#5A8AAA" letter-spacing="1">GENERATES →</text>
+          <!-- ═══════════════════════════════════════════
+               CONNECTOR: Bank → down to Row 2 split
+               ═══════════════════════════════════════════ -->
+          <!-- Vertical drop from Bank node center to split point -->
+          <line x1="790" y1="212" x2="790" y2="310" stroke="url(#g3)" stroke-width="1.5" opacity="0.7"/>
+          <!-- Horizontal split line -->
+          <line x1="240" y1="310" x2="790" y2="310" stroke="#22A070" stroke-width="1" opacity="0.35"/>
+          <!-- Vertical drops to each bottom node -->
+          <line x1="240" y1="310" x2="240" y2="360" stroke="#22A070" stroke-width="1.2" marker-end="url(#arr3)" opacity="0.7"/>
+          <line x1="450" y1="310" x2="450" y2="360" stroke="#22A070" stroke-width="1.2" marker-end="url(#arr3)" opacity="0.7"/>
+          <line x1="660" y1="310" x2="660" y2="360" stroke="#5A8AAA" stroke-width="1.2" marker-end="url(#arr4)" opacity="0.7"/>
+          <line x1="900" y1="310" x2="900" y2="360" stroke="#C8962A" stroke-width="1.2" marker-end="url(#arr5)" opacity="0.7"/>
+          <!-- label on split -->
+          <text x="515" y="302" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#4A4540" letter-spacing="2">CAPITAL DEPLOYS INTO</text>
 
-          <!-- NODE 4: Cash Flow -->
-          <g transform="translate(860,170)">
-            <rect x="-72" y="-52" width="144" height="104" rx="4" fill="#1C1F1E" stroke="#5A8AAA" stroke-width="1" opacity="0.9"/>
-            <text y="-18" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" letter-spacing="2" fill="#5A8AAA">OUTPUT</text>
-            <text y="4" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="22" font-weight="600" fill="#EDE8E1">Cash Flow</text>
-            <text y="24" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="14" font-weight="300" font-style="italic" fill="#8A8078">Monthly Income</text>
-            <text y="42" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#5A8AAA">Reinvest · Distribute</text>
+          <!-- ═══════════════════════════════════════════
+               ROW 2: bottom 4 asset nodes
+               ═══════════════════════════════════════════ -->
+
+          <!-- NODE 4: Hard Assets — Transport (x=240, y=490) -->
+          <g transform="translate(240,490)">
+            <rect x="-110" y="-120" width="220" height="240" rx="4" fill="#161918" stroke="#22A070" stroke-width="1.2"/>
+            <rect x="-110" y="-120" width="220" height="3" rx="2" fill="#22A070" opacity="0.7"/>
+            <text y="-89" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2" fill="#22A070">STAGE 04A</text>
+            <text y="-65" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="19" font-weight="700" fill="#EDE8E1">Transport</text>
+            <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#EDE8E1">Assets</text>
+            <line x1="-55" y1="-30" x2="55" y2="-30" stroke="#22A070" stroke-width="0.5" opacity="0.4"/>
+            <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">18-Wheeler Trailer Rentals</text>
+            <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Dump Trucks</text>
+            <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Heavy Equipment Leasing</text>
+            <line x1="-55" y1="32" x2="55" y2="32" stroke="#22A070" stroke-width="0.5" opacity="0.25"/>
+            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#22A070">$3,000–$6,000 / unit / mo</text>
+            <text y="67" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">High demand · Low mgmt</text>
+            <text y="84" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">Infrastructure-backed</text>
+            <text y="100" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">Daily revenue generation</text>
           </g>
 
-          <!-- LOOP ARROW: Cash Flow back to Trading (curved below) -->
-          <path id="loop-path" d="M 860 222 Q 860 340 480 340 Q 100 340 80 222" stroke="url(#grad-loop)" stroke-width="1" fill="none" marker-end="url(#arr-loop)" stroke-dasharray="6,4" opacity="0.45"/>
-          <text x="480" y="368" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#4A4540" letter-spacing="2">CASH FLOW REINVESTED → NEXT POSITION</text>
+          <!-- NODE 5: Real Estate (x=450, y=490) -->
+          <g transform="translate(450,490)">
+            <rect x="-100" y="-120" width="200" height="240" rx="4" fill="#161918" stroke="#22A070" stroke-width="1.2"/>
+            <rect x="-100" y="-120" width="200" height="3" rx="2" fill="#22A070" opacity="0.7"/>
+            <text y="-89" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2" fill="#22A070">STAGE 04B</text>
+            <text y="-65" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="19" font-weight="700" fill="#EDE8E1">Real Estate</text>
+            <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#EDE8E1">Accumulation</text>
+            <line x1="-50" y1="-30" x2="50" y2="-30" stroke="#22A070" stroke-width="0.5" opacity="0.4"/>
+            <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Land Acquisition</text>
+            <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Trailer Parks</text>
+            <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Apartment Buildings</text>
+            <text y="34" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Commercial Properties</text>
+            <line x1="-50" y1="48" x2="50" y2="48" stroke="#22A070" stroke-width="0.5" opacity="0.25"/>
+            <text y="66" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#22A070">Appreciation + Rental Income</text>
+            <text y="84" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">Charlotte MSA corridor</text>
+            <text y="100" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A4A">Long-term hold strategy</text>
+          </g>
 
-          <!-- Animated dot on arrow1 -->
-          <circle r="4" fill="#C8962A" filter="url(#glow-cu)" opacity="0.9">
-            <animateMotion dur="2.5s" repeatCount="indefinite">
-              <mpath href="#dummy-path1"/>
-            </animateMotion>
-          </circle>
+          <!-- NODE 6: Franchises (x=660, y=490) -->
+          <g transform="translate(660,490)">
+            <rect x="-100" y="-120" width="200" height="240" rx="4" fill="#161918" stroke="#5A8AAA" stroke-width="1.2"/>
+            <rect x="-100" y="-120" width="200" height="3" rx="2" fill="#5A8AAA" opacity="0.7"/>
+            <text y="-89" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2" fill="#5A8AAA">STAGE 04C</text>
+            <text y="-65" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="19" font-weight="700" fill="#EDE8E1">Franchise</text>
+            <text y="-44" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="17" font-weight="300" font-style="italic" fill="#EDE8E1">Opportunities</text>
+            <line x1="-50" y1="-30" x2="50" y2="-30" stroke="#5A8AAA" stroke-width="0.5" opacity="0.4"/>
+            <text y="-14" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Car Wash</text>
+            <text y="2" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Laundromat</text>
+            <text y="18" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Food Services</text>
+            <line x1="-50" y1="32" x2="50" y2="32" stroke="#5A8AAA" stroke-width="0.5" opacity="0.25"/>
+            <text y="50" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#5A8AAA">Proven models · Brand equity</text>
+            <text y="67" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A6A">Recurring foot traffic</text>
+            <text y="84" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A6A">Recession-resilient demand</text>
+            <text y="100" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A5A6A">Owner-operated or managed</text>
+          </g>
 
-          <!-- Animated dots on arrows -->
-          <circle r="4" fill="#C8962A" opacity="0.9" filter="url(#glow-cu)">
-            <animateMotion dur="2.5s" repeatCount="indefinite" begin="0s">
-              <mpath xlink:href="#ap1"/>
-            </animateMotion>
-          </circle>
-          <circle r="4" fill="#22A070" opacity="0.9" filter="url(#glow-em)">
-            <animateMotion dur="2.5s" repeatCount="indefinite" begin="0.8s">
-              <mpath xlink:href="#ap2"/>
-            </animateMotion>
-          </circle>
-          <circle r="4" fill="#5A8AAA" opacity="0.9">
-            <animateMotion dur="2.5s" repeatCount="indefinite" begin="1.6s">
-              <mpath xlink:href="#ap3"/>
-            </animateMotion>
-          </circle>
-          <circle r="3" fill="#C07848" opacity="0.6">
-            <animateMotion dur="6s" repeatCount="indefinite" begin="0s">
-              <mpath xlink:href="#ap-loop"/>
-            </animateMotion>
-          </circle>
+          <!-- NODE 7: Cash Flow Output (x=900, y=490) -->
+          <g transform="translate(900,490)">
+            <rect x="-90" y="-120" width="180" height="240" rx="4" fill="#161918" stroke="#C8962A" stroke-width="1.5"/>
+            <rect x="-90" y="-120" width="180" height="3" rx="2" fill="#C8962A" opacity="0.9"/>
+            <text y="-89" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" letter-spacing="2" fill="#C8962A">OUTPUT</text>
+            <text y="-62" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="24" font-weight="700" fill="#EDE8E1">Cash</text>
+            <text y="-38" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="24" font-weight="300" font-style="italic" fill="#C8962A">Flow</text>
+            <line x1="-45" y1="-24" x2="45" y2="-24" stroke="#C8962A" stroke-width="0.5" opacity="0.5"/>
+            <text y="-8" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Monthly Income</text>
+            <text y="8" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Equity Build</text>
+            <text y="24" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#8A8078">Appreciation</text>
+            <line x1="-45" y1="38" x2="45" y2="38" stroke="#C8962A" stroke-width="0.5" opacity="0.4"/>
+            <text y="56" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#C8962A">Reinvest</text>
+            <text y="72" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#C8962A">Distribute</text>
+            <text y="88" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#C8962A">Expand</text>
+            <text y="104" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A4030">Legacy · Generational</text>
+          </g>
 
-          <!-- Motion paths (invisible) -->
-          <path id="ap1" d="M156,170 L268,170" fill="none" stroke="none"/>
-          <path id="ap2" d="M416,170 L528,170" fill="none" stroke="none"/>
-          <path id="ap3" d="M676,170 L788,170" fill="none" stroke="none"/>
-          <path id="ap-loop" d="M 860 222 Q 860 340 480 340 Q 100 340 80 222" fill="none" stroke="none"/>
+          <!-- ═══════════════════════════════════════════
+               LOOP: Cash Flow reinvest back to Stage 2
+               ═══════════════════════════════════════════ -->
+          <path d="M 900 370 Q 900 280 790 250 Q 680 220 562 170" stroke="url(#g-loop)" stroke-width="1" fill="none" stroke-dasharray="6,4" marker-end="url(#arr-lp)" opacity="0.4"/>
+          <text x="790" y="268" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#4A4540" letter-spacing="1.5">REINVESTED →</text>
+
+          <!-- ═══════════════════════════════════════════
+               ANIMATED DOTS
+               ═══════════════════════════════════════════ -->
+          <!-- Paths for motion (invisible) -->
+          <path id="m1" d="M222,140 L318,140" fill="none" stroke="none"/>
+          <path id="m2" d="M562,140 L658,140" fill="none" stroke="none"/>
+          <path id="m3" d="M790,212 L790,305" fill="none" stroke="none"/>
+          <path id="m4a" d="M240,310 L240,360" fill="none" stroke="none"/>
+          <path id="m4b" d="M450,310 L450,360" fill="none" stroke="none"/>
+          <path id="m4c" d="M660,310 L660,360" fill="none" stroke="none"/>
+          <path id="m4d" d="M900,310 L900,360" fill="none" stroke="none"/>
+          <path id="m-lp" d="M 900 370 Q 900 280 790 250 Q 680 220 562 170" fill="none" stroke="none"/>
+
+          <circle r="4.5" fill="#C8962A" filter="url(#glow)" opacity="0.95">
+            <animateMotion dur="2s" repeatCount="indefinite" begin="0s"><mpath xlink:href="#m1"/></animateMotion>
+          </circle>
+          <circle r="4.5" fill="#8AA8C8" filter="url(#glow)" opacity="0.95">
+            <animateMotion dur="2s" repeatCount="indefinite" begin="1s"><mpath xlink:href="#m2"/></animateMotion>
+          </circle>
+          <circle r="4" fill="#22A070" filter="url(#glow-sm)" opacity="0.9">
+            <animateMotion dur="1.5s" repeatCount="indefinite" begin="2s"><mpath xlink:href="#m3"/></animateMotion>
+          </circle>
+          <circle r="3.5" fill="#22A070" filter="url(#glow-sm)" opacity="0.85">
+            <animateMotion dur="1.2s" repeatCount="indefinite" begin="3.5s"><mpath xlink:href="#m4a"/></animateMotion>
+          </circle>
+          <circle r="3.5" fill="#22A070" filter="url(#glow-sm)" opacity="0.85">
+            <animateMotion dur="1.2s" repeatCount="indefinite" begin="3.9s"><mpath xlink:href="#m4b"/></animateMotion>
+          </circle>
+          <circle r="3.5" fill="#5A8AAA" filter="url(#glow-sm)" opacity="0.85">
+            <animateMotion dur="1.2s" repeatCount="indefinite" begin="4.3s"><mpath xlink:href="#m4c"/></animateMotion>
+          </circle>
+          <circle r="3.5" fill="#C8962A" filter="url(#glow-sm)" opacity="0.85">
+            <animateMotion dur="1.2s" repeatCount="indefinite" begin="4.7s"><mpath xlink:href="#m4d"/></animateMotion>
+          </circle>
+          <circle r="3" fill="#C07848" opacity="0.55">
+            <animateMotion dur="5s" repeatCount="indefinite" begin="0s"><mpath xlink:href="#m-lp"/></animateMotion>
+          </circle>
         </svg>
+      </div>
+
+      <!-- Legend -->
+      <div class="flow-legend reveal">
+        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#C07848"></div>Financial Literacy &amp; Digital Sales</div>
+        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#C8962A"></div>Options &amp; Futures Execution</div>
+        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#8AA8C8"></div>Bank Leverage (SBLOCs / Portfolio Loans)</div>
+        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#22A070"></div>Hard Assets &amp; Real Estate</div>
+        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#5A8AAA"></div>Franchise Income</div>
+        <div class="flow-legend-item"><div class="flow-legend-dot" style="background:#C8962A;opacity:0.5;border:1px dashed #C8962A"></div>Reinvestment Loop</div>
       </div>
     </div>
   </section>
@@ -794,27 +898,32 @@
   <section id="strategy">
     <div class="section-label">How It Works</div>
     <h2 class="section-title reveal">The <em>Flywheel</em></h2>
-    <div class="steps-grid">
-      <div class="steps-connector"></div>
+    <div class="steps-grid" style="grid-template-columns:repeat(5,1fr);">
+      <div class="steps-connector" style="left:10%;right:10%;"></div>
       <div class="step reveal">
-        <div class="step-num">I</div>
-        <h4>Finance Education</h4>
-        <p>Knowledge generates the first capital. We teach options mechanics, risk management, and market structure — funding the initial account and building the discipline to trade it correctly.</p>
+        <div class="step-num" style="color:var(--copper);">I</div>
+        <h4>Literacy &amp; Digital Income</h4>
+        <p>Financial education and digital asset creation — courses, content, consulting — generate the first capital and build the knowledge base driving every decision downstream.</p>
       </div>
       <div class="step reveal">
-        <div class="step-num">II</div>
-        <h4>Market Entry</h4>
-        <p>High-conviction setups identified via technical analysis and macro catalysts. Capital deployed via LEAPs, PUTs, and short-term positions with defined risk and asymmetric upside.</p>
+        <div class="step-num" style="color:var(--gold);">II</div>
+        <h4>Market Execution</h4>
+        <p>Capital enters via stock options and futures — LEAPs, PUTs, short-term plays. Defined risk, high conviction, asymmetric upside. The account grows systematically.</p>
       </div>
       <div class="step reveal">
-        <div class="step-num">III</div>
-        <h4>Asset Acquisition</h4>
-        <p>Gains convert into real assets — dump trucks, commercial real estate, apartment units. Physical, income-producing holdings that generate $3–6K per month per unit.</p>
+        <div class="step-num" style="color:#8AA8C8;">III</div>
+        <h4>Bank Leverage</h4>
+        <p>A grown account unlocks SBLOCs and portfolio margin loans secured against account value. Capital is amplified without liquidating positions — buying power multiplied.</p>
       </div>
       <div class="step reveal">
-        <div class="step-num">IV</div>
-        <h4>Reinvestment Loop</h4>
-        <p>Asset cash flow funds the next market position. The flywheel compounds — each turn building equity across multiple verticals and reducing dependence on any single income source.</p>
+        <div class="step-num" style="color:var(--emerald-light);">IV</div>
+        <h4>Hard Asset Deployment</h4>
+        <p>Leveraged capital acquires income-producing hard assets: 18-wheeler trailer rentals, dump trucks, land, trailer parks, apartments, and commercial real estate.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num" style="color:var(--diamond);">V</div>
+        <h4>Franchise &amp; Reinvest</h4>
+        <p>Cash flow funds franchise opportunities — car washes, laundromats, food services — with proven recurring revenue models. Surplus reinvests into Stage II, compounding the flywheel.</p>
       </div>
     </div>
   </section>
